@@ -1,0 +1,16 @@
+.hero_layout {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .menu_main {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        .logo {
+            padding: 2rem 5rem
+        }
+    }
+
+}

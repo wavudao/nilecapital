@@ -1,0 +1,37 @@
+.footer_layout {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .footer_info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .footer_info_logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            img {
+                margin: 1rem 0;
+            }
+        }
+        .footer_info_linksbox{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            .footer_info_links {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+        }
+    }
+    .footer_media {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        border-top: 5px solid black;
+        .footer_socialmedia {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}

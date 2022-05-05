@@ -1,4 +1,5 @@
-.hero_layout {
+// use this for menu on different pages
+@mixin for_utafiti_menu {
     position: relative;
     width: 100%;
     margin: 0;
@@ -12,5 +13,8 @@
             padding: 2rem 5rem
         }
     }
+}
 
+.hero_layout {
+    @include for_utafiti_menu()
 }

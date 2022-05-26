@@ -1,1 +1,28 @@
-$limegreen: hsl(163, 72%, 41%);
+:root {
+  //Grayscale
+  --color-white: #ffffff;
+  --color-white-1: #fbfbfb;
+  --color-white-2: #f2f2f2;
+
+  --color-grey: #d0d0d0;
+  --color-grey-1: #89888a;
+  --color-grey-2: #565558;
+
+  --color-black: #2b292e;
+  --color-black-1: #222125;
+  --color-black-2: #131215;
+
+  // Categories
+  --color-categories: #5cb1ff;
+  --color-categories-1: #16c0c2;
+  --color-categories-2: #bb9bff;
+  --color-categories-3: #ff985f;
+  --color-categories-4: #1270ce;
+  --color-categories-5: #0e4747;
+  --color-categories-6: #5123f5;
+  --color-categories-7: #d24e19;
+  --color-categories-8: #6d28ff;
+  --color-categories-9: #14a1a3;
+  --color-categories-10: #b9e3e3;
+  --color-categories-11: #828284;
+}

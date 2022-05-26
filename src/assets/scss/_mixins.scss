@@ -1,0 +1,47 @@
+// Responsive fonts. "Include media" settings.
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max, $units: px) {
+	$k: ($f-max - $f-min)/ ($v-max - $v-min);
+	$k: ($k * 100) / 100;
+	$b: $f-min - $k * $v-min;
+	$b: ($b * 100) / 100;
+	$b: $b + $units;
+	@return calc(#{$k} * 100vw + #{$b});
+  }
+
+// Responsive breakpoints. "Include media" settings.
+$s-1920: 1920px;
+$s-1440: 1440px;
+$s-1024: 1024px;
+$s-768: 768px;
+$s-640: 640px;
+
+@mixin s-1920 {
+  @media (max-width: #{$s-1920}) {
+    @content;
+  }
+}
+
+@mixin s-1440 {
+  @media (max-width: #{$s-1440}) {
+    @content;
+  }
+}
+
+@mixin s-1024 {
+  @media (max-width: #{$s-1024}) {
+    @content;
+  }
+}
+
+@mixin s-768 {
+  @media screen and (max-width: #{$s-768}) {
+    @content;
+  }
+}
+
+@mixin s-640 {
+  @media screen and (max-width: #{$s-640}) {
+    @content;
+  }
+}

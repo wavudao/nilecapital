@@ -1,0 +1,284 @@
+.c-footer {
+  background-color: var(--color-black-2);
+  padding: 56px 80px 0;
+  margin: auto 0 0 0;
+
+  @include s-1920 {
+    padding: 56px 70px 0;
+  }
+
+  @include s-1440 {
+    padding: 50px 36px 0;
+  }
+
+  @include s-1024 {
+    padding: 50px 20px 90px;
+  }
+
+  @include s-640 {
+    padding: 50px 20px 60px;
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-bottom: 56px;
+
+    @include s-1440 {
+      padding-bottom: 32px;
+    }
+
+    @include s-640 {
+      flex-wrap: wrap;
+    }
+
+    &--logo {
+      @include s-768 {
+        max-width: 210px;
+      }
+
+      @include s-640 {
+        max-width: unset;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+
+      & .logo {
+        display: inline-block;
+        max-width: 138px;
+
+        @include s-1440 {
+          max-width: 95px;
+        }
+
+        &--text {
+          display: block;
+          font-size: 16px;
+          color: var(--color-grey);
+          margin-top: 10px;
+
+          @include s-1920 {
+            font-size: calcFluidFontSize(14, 16, 1440, 1920);
+          }
+
+          @include s-1440 {
+            font-size: 14px;
+            margin-top: 5px;
+          }
+
+          @include s-640 {
+            font-size: 13px;
+            padding-left: 40px;
+          }
+        }
+      }
+
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      max-width: 880px;
+      width: 100%;
+      padding: 12px 0 0 0;
+
+      @include s-1920 {
+        max-width: 760px;
+        padding: 15px 0 0 0;
+      }
+
+      @include s-1440 {
+        max-width: 604px;
+      }
+
+      @include s-1024 {
+        max-width: 424px;
+      }
+
+      @include s-768 {
+        max-width: 454px;
+      }
+
+      @include s-640 {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        padding: 40px 0 0 0;
+      }
+
+      & .menu {
+        margin-left: 15px;
+
+        &:last-of-type {
+          margin-left: 0;
+        }
+
+        &-list {
+          list-style-type: none;
+
+          @include s-640 {
+            width: 50%;
+            margin-bottom: 10px;
+          }
+
+          &-item {
+            margin-bottom: 14px;
+
+            @include s-640 {
+              margin-bottom: 10px;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            & a {
+              letter-spacing: 0.02em;
+              color: var(--color-white-2);
+              transition: color ease-out 0.3s;
+              line-height: 150%;
+              font-size: calcFluidFontSize(16, 18, 1920, 2560);
+
+              @include s-1920 {
+                font-size: calcFluidFontSize(14, 16, 1440, 1920);
+                font-size: 16px;
+              }
+
+              @include s-1440 {
+                font-size: 14px;
+              }
+
+              &:hover {
+                color: var(--color-grey-1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-white-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-top: solid 1px var(--color-white-2);
+    position: relative;
+
+    @include s-1920 {
+      font-size: calcFluidFontSize(14, 16, 1440, 1920);
+      padding: 20px 0;
+    }
+
+    @include s-1440 {
+      padding: 16px 0;
+      font-size: 14px;
+    }
+
+    @include s-768 {
+      font-size: calcFluidFontSize(13, 14, 640, 768);
+    }
+
+    @include s-640 {
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    & .social {
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include s-640 {
+        width: 100%;
+        padding: 8px 0 24px 0;
+      }
+
+      & li {
+        margin-right: 30px;
+
+        @include s-1440 {
+          margin-right: 25px;
+        }
+
+        @include s-768 {
+          margin-right: 15px;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--color-grey);
+        transition: fill ease-out 0.3s;
+
+        &:hover {
+          fill: var(--color-grey-1);
+        }
+      }
+    }
+
+    & .publish {
+      position: absolute;
+      left: 50%;
+      display: block;
+      max-width: 300px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include s-640 {
+        all: revert;
+      }
+    }
+
+    & .development {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      &--text {
+        @include s-1024 {
+          display: none;
+        }
+      }
+
+      & a {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: color ease-out 0.3s;
+
+        &:hover {
+          color: var(--color-grey-1);
+        }
+      }
+
+      & img {
+        width: 24px;
+        height: 17px;
+        margin: 0 10px;
+      }
+    }
+  }
+}

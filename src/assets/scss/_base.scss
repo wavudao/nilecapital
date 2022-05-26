@@ -1,0 +1,31 @@
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-regular);
+  font-size: calcFluidFontSize(20, 26, 1920, 2560);
+  line-height: 125%;
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(16, 20, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: 16px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#smooth-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,615 @@
+a {
+  font-family: var(--font-medium);
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 60px;
+  line-height: 180%;
+
+  @include s-1920 {
+    margin-top: 50px;
+  }
+
+  @include s-1440 {
+    margin-top: 40px;
+  }
+
+  @include s-640 {
+    margin-top: 30px;
+  }
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ul:not(.custom) {
+  padding-left: 60px;
+  list-style-type: none;
+  padding-top: 15px;
+
+  @include s-1440 {
+    padding-left: 40px;
+  }
+
+  @include s-640 {
+    padding-left: 30px;
+  }
+
+  & li {
+    margin-top: 20px;
+    line-height: 180%;
+    position: relative;
+    word-break: break-all;
+
+    &:before {
+      content: "";
+      left: -32px;
+      top: 12px;
+      position: absolute;
+      display: inline-block;
+      border: solid 4px var(--color-categories);
+      vertical-align: middle;
+      transform: rotate(45deg);
+
+      @include s-1920 {
+        top: 10px;
+      }
+
+      @include s-1440 {
+        left: -24px;
+        top: 8px;
+      }
+
+      @include s-640 {
+        left: -20px;
+        top: 10px;
+        border: solid 3px var(--color-categories);
+      }
+    }
+  }
+}
+
+h1,
+.el-title--h1 {
+  font-family: var(--font-regular);
+  line-height: 100%;
+  font-size: calcFluidFontSize(80, 120, 1920, 2560);
+  font-weight: 400;
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(68, 80, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: 68px;
+  }
+
+  @include s-768 {
+    font-size: calcFluidFontSize(44, 68, 640, 768);
+  }
+
+  @include s-640 {
+    font-size: 44px;
+  }
+}
+
+h2,
+.el-title--h2 {
+  line-height: 110%;
+  font-family: var(--font-s-regular);
+  font-size: calcFluidFontSize(72, 96, 1920, 2560);
+  font-weight: 400;
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(56, 72, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: calcFluidFontSize(48, 56, 1024, 1440);
+  }
+
+  @include s-1024 {
+    font-size: 48px;
+  }
+
+  @include s-768 {
+    font-size: calcFluidFontSize(32, 48, 640, 768);
+  }
+
+  @include s-640 {
+    font-size: 32px;
+  }
+}
+
+h3,
+.el-title-h3 {
+  line-height: 100%;
+  font-size: calcFluidFontSize(56, 66, 1920, 2560);
+  font-weight: 400;
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(48, 56, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: 48px;
+  }
+
+  @include s-768 {
+    font-size: calcFluidFontSize(28, 48, 640, 768);
+  }
+
+  @include s-640 {
+    font-size: 28px;
+  }
+}
+
+h4,
+.el-title-h4 {
+  line-height: 120%;
+  font-size: calcFluidFontSize(28, 34, 1920, 2560);
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(24, 28, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: calcFluidFontSize(22, 24, 1024, 1440);
+  }
+
+  @include s-1024 {
+    font-size: 22px;
+  }
+
+  @include s-768 {
+    font-size: calcFluidFontSize(20, 22, 640, 768);
+  }
+
+  @include s-640 {
+    font-size: 20px;
+  }
+
+  &.semi {
+    font-family: var(--font-semibold);
+  }
+}
+
+blockquote,
+h5,
+.el-title-h5 {
+  line-height: 140%;
+  font-size: calcFluidFontSize(24, 28, 1920, 2560);
+  font-weight: 400;
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(20, 24, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: calcFluidFontSize(20, 20, 1024, 1440);
+  }
+
+  @include s-1024 {
+    font-size: calcFluidFontSize(20, 20, 768, 1024);
+  }
+
+  @include s-768 {
+    font-size: calcFluidFontSize(15, 20, 640, 768);
+  }
+
+  @include s-640 {
+    font-size: 15px;
+  }
+
+  &.semi {
+    font-family: var(--font-semibold);
+  }
+}
+
+h6,
+.el-title--h6 {
+  line-height: 140%;
+  font-size: calcFluidFontSize(20, 26, 1920, 2560);
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(16, 20, 1440, 1920, 2560);
+  }
+
+  @include s-1440 {
+    font-size: calcFluidFontSize(16, 16, 1440, 1024, 1440);
+  }
+
+  @include s-1024 {
+    font-size: calcFluidFontSize(15, 16, 768, 1024);
+  }
+
+  @include s-768 {
+    font-size: 15px;
+  }
+}
+
+.el-title--h7 {
+  line-height: 140%;
+  font-size: calcFluidFontSize(16, 20, 1920, 2560);
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(15, 16, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: 15px;
+  }
+
+  @include s-768 {
+    font-size: calcFluidFontSize(14, 15, 640, 768);
+  }
+
+  @include s-640 {
+    font-size: 14px;
+  }
+}
+
+.el-h8-medium {
+  font-family: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 125%;
+  font-size: calcFluidFontSize(14, 16, 1920, 2560);
+
+  @include s-1920 {
+    font-size: calcFluidFontSize(12, 14, 1440, 1920);
+  }
+
+  @include s-1440 {
+    font-size: 12px;
+  }
+}
+
+blockquote {
+  position: relative;
+  z-index: 1;
+  margin: 100px -40px 0 -40px;
+  background-color: var(--color-categories-10);
+  padding: 40px;
+  line-height: 140%;
+  font-family: var(--font-semibold);
+
+  @include s-1920 {
+    margin: 50px -40px 0 -40px;
+  }
+
+  @include s-1440 {
+    margin: 40px -40px 0 -40px;
+  }
+
+  @include s-640 {
+    padding: 15px;
+    margin: 40px -15px 0 -15px;
+  }
+}
+
+b,
+strong {
+  font-family: var(--font-semibold);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input {
+  line-height: 100%;
+  padding: 14px 15px;
+  color: var(--color-white);
+  border-radius: 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+
+  &[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0;
+    height: 0;
+
+    &:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--color-grey);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      @include s-1440 {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &:after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-color: var(--color-categories-9);
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translate(0, -50%);
+      opacity: 0;
+
+      @include s-1440 {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &:checked {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include s-1440 {
+    padding: 12px 10px;
+  }
+}
+
+.el-button,
+button {
+  cursor: pointer;
+  padding: 16px 50px;
+  background: linear-gradient(95.3deg, #a377ff 10.48%, #30c9cb 95.91%);
+  border-radius: 50px;
+  position: relative;
+  color: var(--color-white);
+  z-index: 1;
+  overflow: hidden;
+  transition: filter 1s;
+  border: none;
+
+  @include s-1440 {
+    padding: 12px 36px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(95.3deg, #30c9cb 10.48%, #a377ff 95.91%);
+    transition: opacity 0.5s ease-out, filter 1s;
+    opacity: 0;
+  }
+
+  &:hover:before {
+    opacity: 1;
+    filter: brightness(1.05);
+  }
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  &.outline {
+    padding: 20px 50px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--color-white);
+
+    @include s-1440 {
+      padding: 15px 35px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      border-radius: 50px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(180deg, #131215 36.01%, #222125 100%);
+      transition: opacity ease-out 0.3s;
+      opacity: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: 50px;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-150%, -50%);
+      background: linear-gradient(95.3deg, #a377ff 10.48%, #30c9cb 95.91%);
+      transition: all ease-out 0.3s;
+    }
+
+    &:hover {
+      &:after {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.el {
+  &-input {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-grey-2);
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-white);
+    }
+
+    & label {
+      top: 50%;
+      transform: translate(0, -50%);
+      position: absolute;
+      left: 15px;
+      line-height: 100%;
+      color: var(--color-white);
+      transition: all ease-out 0.3s;
+      z-index: -1;
+
+      @include s-1440 {
+        left: 10px;
+      }
+    }
+
+    &.active,
+    &.filled {
+      &:after {
+        content: "";
+        height: 1px;
+      }
+
+      & label {
+        left: 15px;
+        top: 7px;
+        font-size: 12px;
+        transform: translate(0, 0);
+        color: var(--color-grey);
+
+        @include s-1440 {
+          left: 10px;
+          top: 5px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    &.filled {
+      & label {
+        opacity: 0;
+      }
+    }
+
+    &-icon {
+      &-eye {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &-checkbox {
+    position: relative;
+
+    & label {
+      padding-left: 44px;
+      font-size: 20px;
+      display: block;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+
+      @include s-1920 {
+        font-size: calcFluidFontSize(16, 20, 1440, 1920);
+      }
+
+      @include s-1440 {
+        font-size: calcFluidFontSize(14, 16, 1024, 1440);
+        padding-left: 35px;
+      }
+
+      @include s-1024 {
+        font-size: 14px;
+      }
+
+      @include s-640 {
+        display: block;
+      }
+    }
+
+    & a {
+      text-decoration: underline;
+      display: inline;
+      margin-left: 5px;
+    }
+  }
+
+  &-question {
+    color: var(--color-white);
+  }
+
+  &-container {
+    padding: 0 80px;
+
+    @include s-1920 {
+      padding: 0 70px;
+    }
+
+    @include s-1440 {
+      padding: 0 35px;
+    }
+
+    @include s-1024 {
+      padding: 0 20px;
+    }
+
+    &.article {
+      max-width: 1040px;
+      margin: 0 auto;
+
+      @include s-1920 {
+        max-width: 900px;
+      }
+
+      @include s-1440 {
+        max-width: 670px;
+      }
+
+      @include s-1024 {
+        max-width: 640px;
+      }
+
+      @include s-640 {
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "normalize";
+@import "./fonts";
+@import "./mixins";
+@import "./globals/colors";
+@import "./globals/typography";
+@import "./globals/elements";
+@import "./base";
+
+//Components
+@import "./components/c-header";
+@import "./components/c-footer";
+@import "./components/c-subscribe";
+@import "./components/c-category";
+
+//pages
+@import "./pages/p-home";
+@import "./pages/p-auth";
+@import "./pages/p-team";
+@import "./pages/p-faq";
+@import "./pages/p-category";
+@import "./pages/p-article";

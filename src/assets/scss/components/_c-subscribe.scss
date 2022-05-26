@@ -1,0 +1,274 @@
+.c-subscribe {
+  position: relative;
+  overflow: hidden;
+  min-height: 830px;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #131215 0%, #222125 100%);
+  z-index: 1;
+
+  @include s-1920 {
+    min-height: 740px;
+    padding: 70px;
+  }
+
+  @include s-1440 {
+    padding: 40px;
+    min-height: 600px;
+  }
+
+  @include s-1024 {
+    padding: 20px;
+    min-height: 450px;
+  }
+
+  @include s-768 {
+    padding: 80px;
+    min-height: 610px;
+  }
+
+  @include s-640 {
+    min-height: 545px;
+    padding: 20px;
+  }
+
+  &-figure {
+    position: absolute;
+    z-index: -1;
+    width: 265px;
+    height: 265px;
+
+    @include s-1440 {
+      width: 220px;
+      height: 220px;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+
+    &.figure {
+      &-1 {
+        left: 19%;
+        top: 4%;
+
+        @include s-1920 {
+          left: 26%;
+        }
+
+        @include s-1024 {
+          left: 27%;
+          top: 0;
+          width: 150px;
+          height: 150px;
+        }
+
+        @include s-768 {
+          left: 52%;
+        }
+
+        @include s-640 {
+          left: 83%;
+          top: 2%;
+        }
+      }
+      
+      &-2 {
+        left: 0%;
+        top: 52%;
+        width: 225px;
+        height: 225px;
+
+        @include s-1920 {
+          left: 0%;
+          top: 58%;
+        }
+
+        @include s-1440 {
+          left: 0;
+          top: 59%;
+          width: 175px;
+          height: 175px;
+        }
+
+        @include s-1024 {
+          left: -2%;
+          top: 51%;
+          width: 135px;
+          height: 135px;
+        }
+
+        @include s-768 {
+          left: -3%;
+          top: 41%;
+        }
+
+        @include s-640 {
+          left: -6%;
+        }
+      }
+
+      &-3 {
+        left: 41%;
+        top: 81%;
+
+        @include s-1920 {
+          left: 40%;
+          top: 73%;
+        }
+
+        @include s-1440 {
+          left: 41%;
+        }
+
+        @include s-1024 {
+          left: 42%;
+          top: 66%;
+          width: 150px;
+          height: 150px;
+        }
+
+        @include s-768 {
+          left: 82%;
+          top: 74%;
+        }
+
+        @include s-640 {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 2100px;
+    margin: 20px 0 0 auto;
+    width: 100%;
+
+    @include s-1920 {
+      max-width: 1650px;
+    }
+
+    @include s-1440 {
+      margin: 24px 0 0 auto;
+      max-width: 100%;
+    }
+
+    @include s-1024 {
+      margin: 10px 0 0 auto;
+    }
+
+    @include s-768 {
+      margin: 26px 0 0 0;
+      flex-wrap: wrap;
+    }
+
+    @include s-640 {
+      margin: 0 0 8px 0;
+    }
+
+    &-inner {
+      @include s-1440 {
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @include s-768 {
+        flex: 1;
+      }
+    }
+
+    &-form {
+      width: 100%;
+      max-width: 880px;
+
+      @include s-1920 {
+        max-width: 760px;
+      }
+
+      @include s-1440 {
+        max-width: 600px;
+      }
+
+      @include s-1024 {
+        max-width: 424px;
+      }
+
+      @include s-768 {
+        padding-top: 50px;
+        max-width: 100%;
+      }
+
+      @include s-640 {
+        padding-top: 36px;
+      }
+    }
+
+    & h2 {
+      max-width: 960px;
+      margin-right: 15px;
+      padding-bottom: 100px;
+
+      @include s-1920 {
+        max-width: 820px;
+      }
+
+      @include s-1440 {
+        max-width: 430px;
+        padding-bottom: 0;
+      }
+
+      @include s-1024 {
+        font-size: 48px;
+        max-width: 410px;
+      }
+
+      @include s-768 {
+        max-width: 100%;
+        margin-right: 0;
+        padding-bottom: 0;
+      }
+
+      @include s-640 {
+        font-size: 32px;
+      }
+    }
+
+    & .el-checkbox {
+      margin-top: 30px;
+
+      @include s-1920 {
+        margin-top: 25px;
+      }
+
+      @include s-1440 {
+        margin-top: 15px;
+      }
+    }
+
+    & .el-button {
+      margin-top: 50px;
+
+      @include s-1920 {
+        margin-top: 45px;
+      }
+
+      @include s-1440 {
+        margin-top: 40px;
+      }
+
+      @include s-640 {
+        margin-top: 24px;
+      }
+    }
+  }
+}

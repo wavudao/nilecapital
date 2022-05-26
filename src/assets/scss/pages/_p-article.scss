@@ -1,0 +1,497 @@
+.p-article {
+  color: var(--color-black-2);
+  background-color: var(--color-white-2);
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+
+  &-box {
+    padding: 400px 0 250px 0;
+
+    @include s-1920 {
+      padding: 350px 0 150px 0;
+    }
+
+    @include s-1440 {
+      padding: 220px 0 130px 0;
+    }
+
+    @include s-640 {
+      padding: 150px 0 120px 0;
+    }
+  }
+
+  &-top {
+    max-width: 1620px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @include s-1920 {
+      max-width: 1220px;
+    }
+
+    @include s-1440 {
+      max-width: 1020px;
+    }
+
+    @include s-1024 {
+      max-width: 100%;
+    }
+
+    &--category {
+      color: var(--color-categories-4);
+      text-transform: uppercase;
+    }
+
+    & h2 {
+      padding-top: 80px;
+
+      @include s-1920 {
+        padding-top: 60px;
+      }
+
+      @include s-1440 {
+        padding-top: 40px;
+      }
+
+      @include s-640 {
+        padding-top: 25px;
+      }
+    }
+
+    &-info {
+      padding-top: 120px;
+
+      @include s-1920 {
+        padding-top: 80px;
+      }
+
+      @include s-1440 {
+        padding-top: 60px;
+      }
+
+      @include s-640 {
+        padding-top: 40px;
+      }
+
+      & .el-title--h7 {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+
+        &.date {
+          padding-top: 30px;
+
+          @include s-1440 {
+            padding-top: 20px;
+          }
+
+          @include s-640 {
+            padding-top: 20px;
+          }
+        }
+
+        & .time {
+          position: relative;
+
+          &:before {
+            position: relative;
+            content: "";
+            display: inline-block;
+            border: solid 3px var(--color-categories);
+            vertical-align: middle;
+            transform: rotate(45deg);
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &-img {
+    margin-top: 120px;
+
+    @include s-1920 {
+      margin-top: 80px;
+    }
+
+    @include s-1440 {
+      margin-top: 60px;
+    }
+
+    @include s-640 {
+      margin-top: 40px;
+    }
+
+    &--author {
+      font-size: 18px;
+      line-height: 150%;
+      text-align: center;
+      color: var(--color-grey-1);
+      margin: 0 auto;
+      display: block;
+      padding-top: 10px;
+
+      @include s-1920 {
+        font-size: 16px;
+      }
+
+      @include s-1440 {
+        font-size: 14px;
+        padding-top: 7px;
+      }
+      @include s-640 {
+        padding-top: 5px;
+      }
+    }
+  }
+
+  &-image {
+    margin-top: 60px;
+
+    @include s-1920 {
+      margin-top: 50px;
+    }
+
+    @include s-1440 {
+      margin-top: 40px;
+    }
+
+    @include s-640 {
+      margin-top: 25px;
+    }
+  }
+
+  &-author {
+    padding-top: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @include s-1920 {
+      padding-top: 80px;
+    }
+
+    @include s-1440 {
+      padding-top: 60px;
+    }
+
+    &--img {
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+      position: relative;
+      z-index: 1;
+
+      @include s-1920 {
+        width: 90px;
+        height: 90px;
+        margin-right: 15px;
+      }
+
+      @include s-1440 {
+        width: 72px;
+        height: 72px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        border-radius: 50%;
+        background: linear-gradient(to right bottom, #a377ff, #30c9cb);
+      }
+
+      & img {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    &-desc {
+      & span {
+        margin-top: 10px;
+        display: block;
+      }
+
+      & ul {
+        padding-top: 15px;
+        display: flex;
+      }
+
+      & svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        fill: var(--color-categories-11);
+        transition: fill ease-out 0.2s;
+
+        @include s-1440 {
+          width: 15px;
+          height: 15 px;
+        }
+
+        &:hover {
+          fill: var(--color-grey-2);
+        }
+      }
+    }
+  }
+
+  &-mark {
+    padding: 40px;
+    background-color: var(--color-white);
+    margin-top: 120px;
+    font-size: 24px;
+    line-height: 180%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include s-1920 {
+      font-size: 20px;
+      margin-top: 80px;
+    }
+
+    @include s-1440 {
+      font-size: 18px;
+      margin-top: 60px;
+    }
+
+    @include s-640 {
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+
+    &-like {
+      @include s-640 {
+        width: 100%;
+      }
+
+      & .like {
+        margin-left: 30px;
+
+        @include s-1440 {
+          margin-left: 15px;
+        }
+
+        &-count {
+          margin: 0 10px;
+          display:inline-block;
+          color: var(--color-grey-1);
+
+          @include s-1440 {
+            margin: 0 7px;
+          }
+        }
+      }
+    }
+
+    &-share {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include s-640 {
+        padding-top: 40px;
+      }
+
+      & ul {
+        margin-left: 30px;
+
+        @include s-1440 {
+          margin-left: 20px;
+        }
+
+        @include s-640 {
+          margin-left: 15px;
+        }
+      }
+
+      & li {
+        display: inline-flex;
+        margin-right: 15px;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+          content: '';
+          position: absolute;
+          border-radius: 50%;
+          z-index: -1;
+          left: 50%;
+          top: 50%;
+          width: calc(100% + 2px);
+          height: calc(100% + 2px);
+          transform: translate(-50%, -50%);
+          background: linear-gradient(to right bottom, #a377ff, #30c9cb);
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      & a {
+        overflow: hidden;
+        border-radius: 50%;
+        padding: 12px;
+        display: inline-flex;
+        background-color: var(--color-white);
+        position: relative;
+        z-index: 1;
+
+        &:after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          top: 50%;
+          transform: translate(-150%, -50%);
+          width: calc(100% + 2px);
+          height: calc(100% + 2px);
+          border-radius: 50%;
+          background: linear-gradient(to right bottom, #a377ff, #30c9cb);
+          transition: all ease-out .2s;
+        }
+
+        &:hover {
+          &:after {
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      & svg {
+        width: 20px;
+        height: 20px;
+
+        @include s-1440 {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  &-also {
+    background-color: var(--color-black-2);
+    color: var(--color-white);
+    padding-top: 250px;
+
+    @include s-1920 {
+      padding-top: 150px;
+    }
+
+    @include s-1440 {
+      padding-top: 130px;
+    }
+
+    @include s-640 {
+      padding-top: 120px;
+    }
+
+    & .c-category-box-el-img img {
+      height: 100%;
+    }
+
+    & .c-category {
+      padding-top: 60px;
+
+      @include s-1920 {
+        padding-top: 50px;
+      }
+
+      @include s-1440 {
+        padding-top: 40px;
+      }
+
+      @include s-640 {
+        padding-top: 25px;
+      }
+    }
+  }
+
+  & h5 {
+    font-family: var(--font-semibold);
+    margin-top: 60px;
+    line-height: 180%;
+
+    @include s-1920 {
+      margin-top: 50px;
+    }
+
+    @include s-1440 {
+      margin-top: 40px;
+    }
+
+    @include s-640 {
+      margin-top: 30px;
+    }
+
+    & + p {
+      margin-top: 20px;
+
+      @include s-1440 {
+        margin-top: 15px;
+      }
+
+      @include s-640 {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  & .el-h8-medium {
+    padding-top: 25px;
+    display: block;
+
+    @include s-1920 {
+      padding-top: 20px;
+    }
+
+    @include s-1440 {
+      padding-top: 15px;
+    }
+
+    @include s-640 {
+      padding-top: 10px;
+    }
+  }
+
+  & .el-title-h4 {
+    color: var(--color-categories-8);
+    display: block;
+    padding: 120px 0;
+
+    @include s-1920 {
+      padding: 80px 0;
+    }
+
+    @include s-1440 {
+      padding: 60px 0;
+    }
+
+    @include s-640 {
+      padding: 40px 0;
+    }
+
+    & + p {
+      margin-top: 0;
+    }
+  }
+
+  & .c-subscribe-box {
+    color: var(--color-white);
+  }
+}

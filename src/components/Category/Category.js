@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Category = ({ date, author, category, header, subheader, time, categoryImg }) => (
+const Category = ({ id, date, author, category, header, subheader, time, categoryImg }) => (
   <>
     <li className="c-category-box">
-      <Link to={"/article"} className="c-category-box-el">
+      <Link to={`/article/:${id}`} className="c-category-box-el">
         <div className="c-category-box-el-top">
           <div className="c-category-box-el-top-row">
             <span className="date">{date}</span>

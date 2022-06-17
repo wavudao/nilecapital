@@ -1,4 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useParams} from 'react-router-dom';
+import qs from "qs"
+import axios from "axios"
 import Container from "../../components/Container";
 import useBodyClass from "../../hooks/useBodyClass";
 import Icon from "../../components/Icon";
@@ -7,10 +10,32 @@ import Subscribe from "../../components/Subscribe";
 import { generalInfoData } from "../../components/GeneralContent/GeneralData";
 import Category from "../../components/Category";
 
+const endpoint = `http://3.132.252.69:1337/api/articles`;
+
 const Article = () => {
   useBodyClass("p-article");
 
   const { date, author, category, header, subheader, time } = generalInfoData;
+  const {id} = useParams()
+  const [article, setArticle] = useState({})
+  const [randomArticles, setRandomArticles] = useState([])
+
+  useEffect(() => {
+    const fetchArticle = async() => {
+      const query = qs.stringify({populate: "*"},{encodedValuesOnly: true})
+      const response = await axios.get(`${endpoint}?${query}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+    
+      const data =  response.data.data;
+      const articleId = parseInt(id.substring(1))
+      const article = [...data].filter(article => article.id === articleId)
+      setArticle(...article)
+    }
+    fetchArticle()
+  },[])
 
   return (
     <>

@@ -73,6 +73,7 @@ const GeneralContent = () => {
           {data.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
             <Category
               key={id}
+              id={id}
               date={new Date(publishedAt).toLocaleDateString()}
               author={author.data.attributes.name}
               category={`General Infromation`}

@@ -494,4 +494,30 @@
   & .c-subscribe-box {
     color: var(--color-white);
   }
+
+  &-loading {
+    padding: 60px 0;
+    text-align: center;
+    height: 100px;
+    cursor: pointer;
+    margin-top: 15px;
+    
+    &:hover {
+      color: var(--color-grey-1);
+      
+      & svg {
+        transform: scale(1.2) rotate(90deg);
+        fill: var(--color-grey-1);
+      }
+    }
+
+    & svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      @include s-1440 {
+        max-width: 18px;
+      }
+    }
+  }
 }

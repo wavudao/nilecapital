@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from 'axios';
+import qs from 'qs';
 import { marketInfoData } from "./MarketData";
 import Subscribe from "../Subscribe";
 import Category from "../Category";
@@ -6,9 +8,36 @@ import Icon from "../Icon";
 import Container from "../Container";
 import setPictures from "../setPictures";
 
+const endpoint = `http://3.132.252.69:1337/api/articles`;
+const baseEndpoint = `http://3.132.252.69:1337`;
+
 const MarketContent = () => {
   const images = setPictures(require.context("../../assets/img/p-category/figureMarket", false, /\.(png|jpe?g|svg|webp)$/));
   const { pageTitle, pageSubTitle, categories } = marketInfoData;
+  const [data, setData] = useState([]);
+
+  const fetchBlogs = async() => {
+    /*
+  response data
+  {
+    id, 
+    attributes : {title, description, content, slug,createdAt }
+  }
+*/
+    const query = qs.stringify({populate: "*"},{encodedValuesOnly: true})
+    const response = await axios.get(`${endpoint}?${query}`, {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    const data =  response.data.data;
+    setData(data)
+  }
+
+  useEffect(() => {
+  fetchBlogs()
+  },[])
 
   return (
     <main className="p-category-main">
@@ -37,17 +66,18 @@ const MarketContent = () => {
       </div>
 
       <Container>
-        <ul className="custom c-category">
-          {categories.map(({ date, author, category, header, subheader, time, photo }, index) => (
+      <ul className="custom c-category">
+          {data.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
             <Category
-              key={index}
-              date={date}
-              author={author}
-              category={category}
-              header={header}
-              subheader={subheader}
-              time={time}
-              categoryImg={photo}
+              key={id}
+              id={id}
+              date={new Date(publishedAt).toLocaleDateString()}
+              author={author.data.attributes.name}
+              category={`General Infromation`}
+              header={title}
+              subheader={description}
+              time={`5 min`}
+              categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
             />
           ))}
         </ul>

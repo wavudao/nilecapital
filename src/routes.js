@@ -28,7 +28,7 @@ const routes = [
 
   { path: "/privacy", element: <Privacy /> },
 
-  { path: "/article", element: <Article /> },
+  { path: "/article/:id", element: <Article /> },
 ];
 
 export default routes;

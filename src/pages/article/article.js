@@ -11,14 +11,20 @@ import { generalInfoData } from "../../components/GeneralContent/GeneralData";
 import Category from "../../components/Category";
 
 const endpoint = `http://3.132.252.69:1337/api/articles`;
-
+const baseEndpoint = `http://3.132.252.69:1337`
 const Article = () => {
   useBodyClass("p-article");
 
-  const { date, author, category, header, subheader, time } = generalInfoData;
   const { id } = useParams();
+  const articleId = parseInt(id.substring(1));
+
   const [article, setArticle] = useState({});
   const [randomArticles, setRandomArticles] = useState([]);
+
+  const getRandomArticles = (articles,num) => {
+    const shuffled = [...articles].sort(()=> 0.5 - Math.random())
+    return shuffled.slice(0, num)
+  }
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -33,12 +39,13 @@ const Article = () => {
       });
 
       const data = response.data.data;
-      const articleId = parseInt(id.substring(1));
       const article = [...data].filter((article) => article.id === articleId);
       setArticle(...article)
+      const shuffledArticles = getRandomArticles(data, 3)
+      setRandomArticles(shuffledArticles)
     };
     fetchArticle();
-  }, []);
+  }, [articleId]);
 
   return (
     <>
@@ -50,33 +57,33 @@ const Article = () => {
       ) : (
         <article className="p-article-box">
           <div className="p-article-top">
-            <h6 className="p-article-top--category">Technical Analysis</h6>
+            <h6 className="p-article-top--category">Cryptocurrency Analysis</h6>
 
             <h2>
-              6 Signs That Tell You When to Sell Your Crypto tokens, lock in
-              massive gains, and avoid Massive Bear Market drawdowns
+              {article.attributes.title}
             </h2>
 
             <div className="p-article-top-info">
-              <span className="el-title--h7">Roselyne Wanjiru</span>
+              <span className="el-title--h7">{article.attributes.author.data.attributes.name}</span>
 
               <span className="el-title--h7 date">
-                Nov 16, 2021
+                {new Date(article.attributes.publishedAt).toLocaleDateString()}
                 <span className="time">2 min read</span>
               </span>
             </div>
           </div>
 
           <div className="p-article-img">
-            <img src={articleImg} alt="" />
+            <img src={`${baseEndpoint}${article.attributes.image.data.attributes.url}`} alt="" />
 
-            <span className="p-article-img--author">
+            {/* <span className="p-article-img--author">
               Photo by Markus Spiske / Unsplash
-            </span>
+            </span> */}
           </div>
 
-          <Container article>
-            <p>
+          <Container article style={{overFlow: 'scrollY'}}>
+            <p>{article.attributes.content}</p>
+            {/* <p>
               Crypto is a fast-moving landscape. The extreme outperformance of
               Solana, AVAX, BNB, dogecoin, and Shibatoken should be proof of
               this very statement. For those not in the know, the whole Crypto
@@ -241,7 +248,7 @@ const Article = () => {
                 next downturn. If you are not sure, here are a few things to
                 look out for, towards the final top of this recent bull cycle.
               </i>
-            </p>
+            </p> */}
 
             <div className="p-article-author">
               <div className="p-article-author--img">
@@ -249,9 +256,9 @@ const Article = () => {
               </div>
 
               <div className="p-article-author-desc">
-                <h6>Roselyne Wanjiru</h6>
+                <h6>{article.attributes.author.data.attributes.name}</h6>
 
-                <span>On-Chain Analyst</span>
+                {/* <span>On-Chain Analyst</span> */}
 
                 <ul className="custom">
                   <li>
@@ -312,17 +319,18 @@ const Article = () => {
           <h2>You might also like</h2>
 
           <ul className="custom c-category">
-            {[...Array(3)].map((item, index) => (
+            {randomArticles.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
               <Category
-                key={index}
-                date={date}
-                author={author}
-                category={category}
-                header={header}
-                subheader={subheader}
-                time={time}
-                categoryImg={articleImg}
-              />
+              key={id}
+              id={id}
+              date={new Date(publishedAt).toLocaleDateString()}
+              author={author.data.attributes.name}
+              category={`General Infromation`}
+              header={title}
+              subheader={description}
+              time={`5 min`}
+              categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
+            />
             ))}
           </ul>
         </Container>

@@ -81,8 +81,9 @@ const Article = () => {
             </span> */}
           </div>
 
-          <Container article style={{overFlow: 'scrollY'}}>
+          <Container article >
             <p>{article.attributes.content}</p>
+            
             {/* <p>
               Crypto is a fast-moving landscape. The extreme outperformance of
               Solana, AVAX, BNB, dogecoin, and Shibatoken should be proof of

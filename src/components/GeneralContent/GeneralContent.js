@@ -10,6 +10,7 @@ import setPictures from "../setPictures";
 
 const endpoint = `http://3.132.252.69:1337/api/articles`;
 const baseEndpoint = `http://3.132.252.69:1337`;
+
 const GeneralContent = () => {
   const images = setPictures(require.context("../../assets/img/p-category/figure", false, /\.(png|jpe?g|svg|webp)$/));
   const { pageTitle, pageSubTitle, categories } = generalInfoData;

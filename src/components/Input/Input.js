@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import PropTypes from "prop-types";
+import { AuthContext } from "../../App";
 
 const Input = ({ name, type, placeholder }) => {
   const [state, setState] = useState("");
   const [isActive, setActive] = useState(false);
   const [currentType, setType] = useState(type);
   const [isFocusOut, setFocusOut] = useState(false);
+  const authContext = useContext(AuthContext)
 
   const handleChange = (e) => {
     setState(e.target.value);
+    authContext.add(e.target.name, e.target.value)
 
     if (e.target.value === "") {
       setActive(false);

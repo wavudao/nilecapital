@@ -86,7 +86,7 @@ const Header = () => {
               </li>
 
               <li>
-                <NavLink className="el-button" to="/login">
+                <NavLink className="el-button" to="/signup">
                   Join
                 </NavLink>
               </li>

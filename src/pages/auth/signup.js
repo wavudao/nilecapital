@@ -24,8 +24,8 @@ export const Signup = () => {
     console.log(email)
 
       const sig =  await signMessages()
- 
-    axios.post('https://auth.nilecapital.cc/api/signup', {
+    //s://auth.nilecapital.cc
+    axios.post('http://3.132.252.69:1984/api/signup', {
       email: email,
       name:name,
       signature:sig,

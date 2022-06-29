@@ -59,7 +59,8 @@ const Auth = () => {
         }
       });
     } else {
-      axios.post('https://auth.nilecapital.cc/api/signin', {
+      //3.132.252.69 https://auth.nilecapital.cc
+      axios.post('https://3.132.252.69:1984/api/signin', {
         email: email,
       })
       .then(function (response) {

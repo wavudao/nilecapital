@@ -19,7 +19,7 @@
     "crypto": "yarn:crypto-browserify",
     "crypto-browserify": "^3.12.0",
     "firebase": "^9.8.4",
-    "gsap": "file:gsap-bonus.tgz",
+    "gsap": "./gsap-bonus.tgz",
     "qs": "^6.10.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

@@ -8,6 +8,8 @@ import Team from "./pages/team";
 import Terms from "./pages/terms";
 import Privacy from "./pages/privacy";
 import Article from "./pages/article";
+import { Signup } from "./pages/auth";
+import { Account } from "./pages/account";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -16,7 +18,7 @@ const routes = [
 
   { path: "/market", element: <Market /> },
 
-  { path: "/login", element: <Auth /> },
+  { path: "/signup", element: <Signup /> },
   
   { path: "/login", element: <Auth /> },
 
@@ -29,6 +31,8 @@ const routes = [
   { path: "/privacy", element: <Privacy /> },
 
   { path: "/article/:id", element: <Article /> },
+
+  { path: "account", element: <Account/>}
 ];
 
 export default routes;

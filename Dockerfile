@@ -3,7 +3,7 @@ FROM node:14-alpine
 WORKDIR /app
 
 COPY package.json ./
-COPY gasp-bonus.tgz ./
+COPY gsap-bonus.tgz ./
 
 RUN apk add g++ gcc make  python2
 

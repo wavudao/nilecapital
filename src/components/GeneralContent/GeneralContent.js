@@ -8,8 +8,8 @@ import Icon from "../Icon";
 import Container from "../Container";
 import setPictures from "../setPictures";
 
-const endpoint = `http://3.132.252.69:1337/api/articles`;
-const baseEndpoint = `http://3.132.252.69:1337`;
+const endpoint = `https://strapi.nilecapital.cc/api/articles`;
+const baseEndpoint = `https://strapi.nilecapital.cc`;
 
 const GeneralContent = () => {
   const images = setPictures(require.context("../../assets/img/p-category/figure", false, /\.(png|jpe?g|svg|webp)$/));

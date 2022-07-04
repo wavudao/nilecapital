@@ -10,8 +10,8 @@ import Subscribe from "../../components/Subscribe";
 import { generalInfoData } from "../../components/GeneralContent/GeneralData";
 import Category from "../../components/Category";
 
-const endpoint = `http://3.132.252.69:1337/api/articles`;
-const baseEndpoint = `http://3.132.252.69:1337`
+const endpoint = `https://strapi.nilecapital.cc/api/articles`;
+const baseEndpoint = `https://strapi.nilecapital.cc`
 const Article = () => {
   useBodyClass("p-article");
 

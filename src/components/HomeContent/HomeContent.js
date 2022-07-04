@@ -42,9 +42,27 @@ const HomeContent = () => {
       });
       
       const data = response.data.data;
+      // console.log(data[0].attributes.category.data.attributes.name)
+
       const shuffledArticles = getRandomArticles(data, 3)
-      setRandomArticles(shuffledArticles)
+      let at =[]
+      
+      for (let i = 0; i < shuffledArticles.length; i++) {
+        const lands = {
+          date:data[i].attributes.createdAt,  
+          author:data[i].attributes.author.data.attributes.name ,
+          category:data[i].attributes.category.data.attributes.name ,
+          header:data[i].attributes.title,
+          subheader:data[i].attributes.description ,
+          time:data[i].attributes.createdAt 
+        }
+        at.push(lands)
+
+      }
+      setRandomArticles(at)
+      console.log(at)
     }
+
     fetchArticle();
   },[])
 

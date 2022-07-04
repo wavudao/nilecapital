@@ -10,14 +10,20 @@ import useBodyClass from "../../hooks/useBodyClass";
 import { generalInfoData } from "./HomeData";
 import { Link } from "react-router-dom";
 import useHomeAnims from "../../hooks/useHomeAnims";
+import { useSelector } from "react-redux";
 
 const endpoint = `https://strapi.nilecapital.cc/api/articles`;
 const baseEndpoint = `https://strapi.nilecapital.cc`
+
+
+
 const HomeContent = () => {
+  const articles = useSelector(state=>state.articles);
+  console.log("aricles home", articles)
   useBodyClass("p-home");
 
   const images = setPictures(require.context("../../assets/img/p-home/", false, /\.(png|jpe?g|svg|webp)$/));
-  const { date, author, category, header, subheader, time } = generalInfoData;
+  // const { date, author, category, header, subheader, time } = generalInfoData;
   const chartTable = useRef(null);
   const chartSvg = useRef(null);
   const trustInfo = useRef(null);
@@ -45,22 +51,22 @@ const HomeContent = () => {
       // console.log(data[0].attributes.category.data.attributes.name)
 
       const shuffledArticles = getRandomArticles(data, 3)
-      let at =[]
+      // let at =[]
       
-      for (let i = 0; i < shuffledArticles.length; i++) {
-        const lands = {
-          date:data[i].attributes.createdAt,  
-          author:data[i].attributes.author.data.attributes.name ,
-          category:data[i].attributes.category.data.attributes.name ,
-          header:data[i].attributes.title,
-          subheader:data[i].attributes.description ,
-          time:data[i].attributes.createdAt 
-        }
-        at.push(lands)
+      // for (let i = 0; i < shuffledArticles.length; i++) {
+      //   const lands = {
+      //     date:data[i].attributes.createdAt,  
+      //     author:data[i].attributes.author.data.attributes.name ,
+      //     category:data[i].attributes.category.data.attributes.name ,
+      //     header:data[i].attributes.title,
+      //     subheader:data[i].attributes.description ,
+      //     time:data[i].attributes.createdAt 
+      //   }
+      //   at.push(lands)
 
-      }
-      setRandomArticles(at)
-      console.log(at)
+      // }
+      setRandomArticles(shuffledArticles)
+      // console.log(at)
     }
 
     fetchArticle();
@@ -349,17 +355,18 @@ const HomeContent = () => {
               <h2>General Information</h2>
 
               <ul className="custom c-category">
-              {randomArticles.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+              {getRandomArticles(articles, 3)?.map(({id, attributes: {title, description, publishedAt, image, author,category}}) => (
                 <Category
                 key={id}
                 id={id}
                 date={new Date(publishedAt).toLocaleDateString()}
                 author={author.data.attributes.name}
-                category={`General Infromation`}
+                category={category.data.attributes.name}
                 header={title}
                 subheader={description}
                 time={`5 min`}
                 categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
+             
               />
             ))}
               </ul>
@@ -390,7 +397,7 @@ const HomeContent = () => {
               <h2>Market Commentary</h2>
 
               <ul className="custom c-category">
-              {randomArticles.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+              {getRandomArticles(articles, 3)?.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
                 <Category
                 key={id}
                 id={id}

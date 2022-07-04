@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import logo from "../../assets/img/logo.png";
-import darkLogo from "../../assets/img/darkLogo.png";
+import logo from "../../assets/img/logo.svg";
+import darkLogo from "../../assets/img/darkLogo.svg";
 import Container from "../Container";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";

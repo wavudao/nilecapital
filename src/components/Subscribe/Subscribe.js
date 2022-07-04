@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import Input from "../Input";
 import setPictures from "../setPictures";
+import { AuthContext } from "../../App";
 
 const Subscribe = () => {
   const images = setPictures(require.context("../../assets/img/c-subscribe/", false, /\.(png|jpe?g|svg|webp)$/));
+  const authContext = useContext(AuthContext)
+  const[confirm, setConfirm] = useState(false)
+
+  const email = authContext.userData.userEmail
+
+  console.log("confirm", confirm)
+
 
   return (
     <>
@@ -29,7 +37,7 @@ const Subscribe = () => {
             <Input type={'text'} name={'userEmail'} placeholder={'Your email'}/>
 
             <div className="el-checkbox">
-              <input name="user-check" id="user-check" type="checkbox" />
+              <input onChange={e=>setConfirm(!confirm)} name="user-check" id="user-check" type="checkbox" />
 
               <label htmlFor="user-check">
                 I confirm that I read and agree to the
@@ -37,8 +45,8 @@ const Subscribe = () => {
               </label>
             </div>
 
-            <button className="el-button outline" type="submit">
-              Subscribe
+            <button disabled={!confirm} style={{cursor:`${confirm && "not-allowed"} `}} className="el-button outline" type="submit">
+              Subscribe 
             </button>
           </div>
         </div>

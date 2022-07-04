@@ -1,4 +1,4 @@
-import React,{useMemo,createContext, useState, useContext} from "react";
+import React,{useMemo,createContext, useState,  useEffect} from "react";
 import routes from "./routes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -11,14 +11,16 @@ import {
     PhantomWalletAdapter,
     SlopeWalletAdapter,
     SolflareWalletAdapter,
-    SolletExtensionWalletAdapter,
-    SolletWalletAdapter,
     TorusWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 import {
     WalletModalProvider,
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
+import { fetch } from "./redux/actions";
+import { useDispatch } from "react-redux";
+
+
 
 export const AuthContext = createContext()
 
@@ -42,6 +44,14 @@ function App() {
       [name]: data
     }))
   }
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    const getArticles = ()=>{
+      dispatch(fetch());
+    }
+    getArticles()
+  },[])
 
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Mainnet

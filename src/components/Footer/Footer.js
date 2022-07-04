@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo.svg";
 import eyeLogo from "../../assets/icons/lit-logo.gif";
 import Icon from "../Icon";
 
@@ -57,37 +57,37 @@ const Footer = () => {
         <div className="c-footer-bottom">
           <ul className="custom social">
             <li>
-              <a href="/">
+              <a  rel="noreferrer" target='_blank' href="https://www.facebook.com/WavuDAO ">
                 <Icon name="facebook" />
               </a>
             </li>
 
             <li>
-              <a href="/">
+              <a rel="noreferrer" target='_blank' href="https://twitter.com/Wavu_DAO ">
                 <Icon name="twitter" />
               </a>
             </li>
 
-            <li>
-              <a href="/">
+            {/* <li>
+              <a h">
                 <Icon name="reddit" />
               </a>
-            </li>
+            </li> */}
 
-            <li>
-              <a href="/">
+            {/* <li>
+              <a  rel="noreferrer" target='_blank'  href="">
                 <Icon name="youtube" />
               </a>
-            </li>
+            </li> */}
 
             <li>
-              <a href="/">
+              <a  rel="noreferrer" target='_blank'  href="https://t.me/+g7reiUuu6b0xZmVl">
                 <Icon name="telegram" />
               </a>
             </li>
           </ul>
-
-          <span className="publish">© 2021 Published by Utafiti</span>
+{/* ©  */}
+          <span className="publish">{`© ${new Date().getFullYear()} WavuDao`}</span>
 
           <span className="development">
             <span className="development--text">Design & Development:</span>

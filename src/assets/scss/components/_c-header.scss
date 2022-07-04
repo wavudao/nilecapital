@@ -88,18 +88,21 @@
   }
 
   &-logo {
-    display: block;
+    display: flex;
     flex: 0 0 15%;
+    justify-content: center;
+    align-items: center;
 
     & img {
-      max-width: 100% !important;
+      max-width: 275px;
+      width:100%;
 
       @include s-1920 {
-        max-width: 100% !important;
+        max-width: 258px;
       }
 
       @include s-1440 {
-        max-width: 100% !important;
+        max-width: 210% !important;
       }
 
       @include s-640 {

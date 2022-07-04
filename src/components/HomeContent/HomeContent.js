@@ -78,9 +78,9 @@ const HomeContent = () => {
 
               <h5> Build a portfolio of high performing digital assets by investing with us.</h5>
 
-              <Link className="el-button outline" to={"/login"}>
+              <a className="el-button outline" href= "https://app.solrise.finance/funds/CXwv4U7Y7TozUWGEo4jrx8ogddQCyvbywQeUctL1eSBV">
                 Invest with us
-              </Link>
+              </a>
             </div>
 
             <div className="section-top-chart">
@@ -263,8 +263,9 @@ const HomeContent = () => {
 
           <Container>
             <div className="section-trust-info" ref={trustInfo}>
-              <div className="section-trust-info-el">
-                <span className="el--title el-title--h1">10+ years</span>
+
+              <div className="section-trust-info-el" >
+                <span className="el--title el-title--h1">8+ years</span>
 
                 <span className="el--subtitle el-title-h5">Investing in the Crypto Industry</span>
               </div>
@@ -272,13 +273,13 @@ const HomeContent = () => {
               <div className="section-trust-info-el">
                 <span className="el--title el-title--h1">x80</span>
 
-                <span className="el--subtitle el-title-h5">Performance over 10 years</span>
+                <span className="el--subtitle el-title-h5">Performance over 8 years</span>
               </div>
 
               <div className="section-trust-info-el">
                 <span className="el--title el-title--h1">100%</span>
 
-                <span className="el--subtitle el-title-h5">Fully commited to Crypto</span>
+                <span className="el--subtitle el-title-h5">Fully committed to Crypto</span>
               </div>
             </div>
           </Container>
@@ -301,7 +302,7 @@ const HomeContent = () => {
             <img src={images["join-figure-3.png"]} alt="" />
           </span>
 
-          <h2>Join our Fund and take advantage of our decade’s long knowledge and experience in Crypto</h2>
+          <h2>Join our Fund and take advantage of our 8+ years long knowledge and experience in Crypto</h2>
         </section>
 
         <section className="section-general">

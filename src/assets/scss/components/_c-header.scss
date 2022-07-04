@@ -92,18 +92,18 @@
     flex: 0 0 15%;
 
     & img {
-      max-width: 175px;
+      max-width: 100% !important;
 
       @include s-1920 {
-        max-width: 138px;
+        max-width: 100% !important;
       }
 
       @include s-1440 {
-        max-width: 95px;
+        max-width: 100% !important;
       }
 
       @include s-640 {
-        max-width: 67px;
+        max-width: 140% !important;
       }
     }
   }

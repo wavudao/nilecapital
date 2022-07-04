@@ -13,6 +13,7 @@
 $s-1920: 1920px;
 $s-1440: 1440px;
 $s-1024: 1024px;
+$s-1280: 1280px;
 $s-768: 768px;
 $s-640: 640px;
 
@@ -30,6 +31,11 @@ $s-640: 640px;
 
 @mixin s-1024 {
   @media (max-width: #{$s-1024}) {
+    @content;
+  }
+}
+@mixin s-1280 {
+  @media (max-width: #{$s-1280}) {
     @content;
   }
 }

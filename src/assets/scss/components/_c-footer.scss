@@ -47,7 +47,7 @@
 
       & .logo {
         display: inline-block;
-        max-width: 138px;
+        max-width: 30% !important;
 
         @include s-1440 {
           max-width: 95px;

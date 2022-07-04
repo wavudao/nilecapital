@@ -196,6 +196,8 @@
         @include s-1024 {
           flex-wrap: wrap;
         }
+      
+        
       }
 
       &-desc {
@@ -527,7 +529,9 @@
         @include s-1440 {
           padding-left: 100px;
         }
-
+        @include s-1280 {
+          padding-left: 50px;
+        }
         @include s-1024 {
           padding-left: 50px;
         }
@@ -702,6 +706,12 @@
           padding-top: 150px;
           margin: 0 -15px;
         }
+        @include s-1280 {
+          margin: 0 -10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding-top: 75px;
+        }
 
         @include s-1024 {
           margin: 0 -10px;
@@ -709,7 +719,8 @@
           justify-content: center;
           padding-top: 75px;
         }
-
+        
+      
         @include s-768 {
           margin: 0;
           padding-top: 100px;
@@ -734,6 +745,10 @@
           @include s-1440 {
             padding: 45px;
             margin: 0 15px 30px;
+          }
+          @include s-1280 {
+            margin: 0 20px 40px;
+            width: calc(50% - 40px);
           }
 
           @include s-1024 {

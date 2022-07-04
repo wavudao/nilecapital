@@ -26,7 +26,7 @@ const Subscribe = () => {
           </div>
 
           <div className="c-subscribe-box-form">
-            <Input type={'text'} name={'user-name'} placeholder={'Your name'}/>
+            <Input type={'text'} name={'userEmail'} placeholder={'Your email'}/>
 
             <div className="el-checkbox">
               <input name="user-check" id="user-check" type="checkbox" />

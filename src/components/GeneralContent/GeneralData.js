@@ -3,8 +3,8 @@ import category2 from "../../assets/img/p-category/category2.jpg";
 import category3 from "../../assets/img/p-category/category3.jpg";
 
 export const generalInfoData = {
-  pageTitle: "Our Greatest Minds",
-  pageSubTitle: "We are learning in Public, expect doozies and the dreaded Lollapalooza effect",
+  pageTitle: "Our knowledge base",
+  pageSubTitle: "Read through our minds ",
 
   categories: [
     {

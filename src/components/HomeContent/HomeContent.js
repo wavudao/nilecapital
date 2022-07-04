@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import qs from "qs";
+import axios from "axios";
 import Category from "../Category";
 import Subscribe from "../Subscribe";
 import Container from "../Container";
@@ -8,6 +10,9 @@ import useBodyClass from "../../hooks/useBodyClass";
 import { generalInfoData } from "./HomeData";
 import { Link } from "react-router-dom";
 import useHomeAnims from "../../hooks/useHomeAnims";
+
+const endpoint = `https://strapi.nilecapital.cc/api/articles`;
+const baseEndpoint = `https://strapi.nilecapital.cc`
 const HomeContent = () => {
   useBodyClass("p-home");
 
@@ -16,6 +21,32 @@ const HomeContent = () => {
   const chartTable = useRef(null);
   const chartSvg = useRef(null);
   const trustInfo = useRef(null);
+
+  const [randomArticles, setRandomArticles] = useState([])
+
+  const getRandomArticles = (articles, num) => {
+    const shuffled = [...articles].sort(()=> 0.5 - Math.random())
+    return shuffled.slice(0, num) 
+   }
+
+  useEffect(() => {
+    const fetchArticle = async () => {
+      const query = qs.stringify(
+        { populate: "*" },
+        { encodedValuesOnly: true }
+      );
+      const response = await axios.get(`${endpoint}?${query}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      
+      const data = response.data.data;
+      const shuffledArticles = getRandomArticles(data, 3)
+      setRandomArticles(shuffledArticles)
+    }
+    fetchArticle();
+  },[])
 
   useHomeAnims(chartTable, chartSvg, trustInfo);
 
@@ -299,18 +330,19 @@ const HomeContent = () => {
               <h2>General Information</h2>
 
               <ul className="custom c-category">
-                {[...Array(3)].map((item, index) => (
-                  <Category
-                    key={index}
-                    date={date}
-                    author={author}
-                    category={category}
-                    header={header}
-                    subheader={subheader}
-                    time={time}
-                    categoryImg={images["general-figure-4.png"]}
-                  />
-                ))}
+              {randomArticles.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+                <Category
+                key={id}
+                id={id}
+                date={new Date(publishedAt).toLocaleDateString()}
+                author={author.data.attributes.name}
+                category={`General Infromation`}
+                header={title}
+                subheader={description}
+                time={`5 min`}
+                categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
+              />
+            ))}
               </ul>
 
               <Link className="section-general-link" to="/general">
@@ -339,18 +371,19 @@ const HomeContent = () => {
               <h2>Market Commentary</h2>
 
               <ul className="custom c-category">
-                {[...Array(3)].map((item, index) => (
-                  <Category
-                    key={index}
-                    date={date}
-                    author={author}
-                    category={category}
-                    header={header}
-                    subheader={subheader}
-                    time={time}
-                    categoryImg={images["general-figure-4.png"]}
-                  />
-                ))}
+              {randomArticles.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+                <Category
+                key={id}
+                id={id}
+                date={new Date(publishedAt).toLocaleDateString()}
+                author={author.data.attributes.name}
+                category={`General Infromation`}
+                header={title}
+                subheader={description}
+                time={`5 min`}
+                categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
+              />
+            ))}
               </ul>
 
               <Link className="section-general-link" to="/market">

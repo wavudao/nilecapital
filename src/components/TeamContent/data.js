@@ -27,7 +27,7 @@ export const teamData = {
       photo: faith,
       name: "Faith Mauta",
       position: "Chief operating officer",
-      descriptionTitle: "Chief Operating Officer  C.O.O .",
+      descriptionTitle: "Chief Operating Officer ",
       description: `Faith Mauta is responsible for overseeing the overall business operations strategy which is crucial for our growth and success. A change agent empowering purpose-driven organizations bring big ideas to life. Her accomplishment is demonstrated by her tenure as the Partnerships Director at Pesabase, a premier payments and remittance solutions provider in Africa, overseeing the growth of the lending platform by closing key partnerships with the leading telcos; Safaricom, MTN and Banks in the region.
       Previously she served as the Head of Communications with the top leasing firms in Africa Vaell Leasing, RentCo Africa where she developed and implanted company communication plans, business strategies resulting to clear company structures and flow of work steering both companies to great brand heights and growth in both government and corporate clientele portfolio.
       Faith has over 15 years of work experience directing business strategies. She is a hands-on team leader in the management and expansion of key partnership and stake holder relationships. Faith is a robust communicator with outstanding negotiating skills, unwavering focus on collaborating with teams both internal and external, B2B & B2C clients to anticipate requirements and maximize business opportunities who worked.

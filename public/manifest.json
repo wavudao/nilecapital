@@ -1,6 +1,6 @@
 {
-  "short_name": "Utafiti",
-  "name": "Utafiti App",
+  "short_name": "Nile Capital",
+  "name": "Your investment manager in digital asset landscapes.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,15 +8,11 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "nilelogo.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
+  
   ],
   "start_url": ".",
   "display": "standalone",

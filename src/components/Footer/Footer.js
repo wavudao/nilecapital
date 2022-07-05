@@ -14,7 +14,7 @@ const Footer = () => {
               <img src={logo} alt="site logo" />
             </Link>
 
-            <span className="logo--text">Your investment manager in digital asset landscapes.</span>
+            <span className="logo--text">Your investment manager in the digital asset landscapes.</span>
           </div>
 
           <div className="c-footer-top-menu">

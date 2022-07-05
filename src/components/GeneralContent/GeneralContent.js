@@ -1,43 +1,17 @@
-import React, {useEffect, useState} from "react";
-import axios from 'axios';
-import qs from 'qs';
-import { generalInfoData } from "./GeneralData";
+import React from "react";
 import Subscribe from "../Subscribe";
 import Category from "../Category";
 import Icon from "../Icon";
 import Container from "../Container";
 import setPictures from "../setPictures";
+import { useSelector } from "react-redux";
 
-const endpoint = `https://strapi.nilecapital.cc/api/articles`;
 const baseEndpoint = `https://strapi.nilecapital.cc`;
 
 const GeneralContent = () => {
   const images = setPictures(require.context("../../assets/img/p-category/figure", false, /\.(png|jpe?g|svg|webp)$/));
-  const { pageTitle, pageSubTitle, categories } = generalInfoData;
-  const [data, setData] = useState([]);
+  const Articles = useSelector(state=>state.articles.filter(article=>article.attributes.category.data.attributes.name === `general information`));
 
-  const fetchBlogs = async() => {
-        /*
-      response data
-      {
-        id, 
-        attributes : {title, description, content, slug,createdAt }
-      }
-    */
-      const query = qs.stringify({populate: "*"},{encodedValuesOnly: true})
-      const response = await axios.get(`${endpoint}?${query}`, {
-        headers: {
-          Accept: "application/json",
-        },
-      });
-    
-      const data =  response.data.data;
-      setData(data)
-  }
-
-  useEffect(() => {
-    fetchBlogs()
-  },[])
 
   return (
     <main className="p-category-main">
@@ -62,16 +36,16 @@ const GeneralContent = () => {
           <span className="p-category-top--bg"></span>
 
           <div className="p-category-top-box">
-            <h1>{pageTitle}</h1>
+            <h1>Our knowledge base</h1>
 
-            <h5>{pageSubTitle}</h5>
+            <h5>Read Our current and prior updates.</h5>
           </div>
         </Container>
       </div>
 
       <Container>
         <ul className="custom c-category">
-          {data.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+          {Articles.map(({id, attributes: {title, description, publishedAt, image, author,readtime}}) => (
             <Category
               key={id}
               id={id}
@@ -80,7 +54,7 @@ const GeneralContent = () => {
               category={`General Infromation`}
               header={title}
               subheader={description}
-              time={`5 min`}
+              time={readtime}
               categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
             />
           ))}

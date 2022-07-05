@@ -7,3 +7,10 @@ export const store = createStore(
  articlesReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+
+// import { configureStore } from '@reduxjs/toolkit'
+
+// export default configureStore({
+//   reducer: {},
+// })

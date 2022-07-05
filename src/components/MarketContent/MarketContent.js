@@ -7,38 +7,15 @@ import Category from "../Category";
 import Icon from "../Icon";
 import Container from "../Container";
 import setPictures from "../setPictures";
+import { useSelector } from "react-redux";
 
 const endpoint = `http://3.132.252.69:1337/api/articles`;
 const baseEndpoint = `http://3.132.252.69:1337`;
 
 const MarketContent = () => {
   const images = setPictures(require.context("../../assets/img/p-category/figureMarket", false, /\.(png|jpe?g|svg|webp)$/));
-  const { pageTitle, pageSubTitle, categories } = marketInfoData;
-  const [data, setData] = useState([]);
 
-  const fetchBlogs = async() => {
-    /*
-  response data
-  {
-    id, 
-    attributes : {title, description, content, slug,createdAt }
-  }
-*/
-    const query = qs.stringify({populate: "*"},{encodedValuesOnly: true})
-    const response = await axios.get(`${endpoint}?${query}`, {
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    const data =  response.data.data;
-    setData(data)
-  }
-
-  useEffect(() => {
-  fetchBlogs()
-  },[])
-
+  const market_Articles = useSelector(state=>state.articles.filter(article=>article.attributes.category.data.attributes.name === `market commentary`));
   return (
     <main className="p-category-main">
       <div className="p-category-top market">
@@ -58,25 +35,25 @@ const MarketContent = () => {
           <span className="p-category-top--bg"></span>
 
           <div className="p-category-top-box">
-            <h1>{pageTitle}</h1>
+            <h1>Market Commentary</h1>
 
-            <h5>{pageSubTitle}</h5>
+            <h5>Our thoughts on current macro and investment landscape.</h5>
           </div>
         </Container>
       </div>
 
       <Container>
       <ul className="custom c-category">
-          {data.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+          {market_Articles.map(({id, attributes: {title, readtime,  description, publishedAt, image, author}}) => (
             <Category
               key={id}
               id={id}
               date={new Date(publishedAt).toLocaleDateString()}
               author={author.data.attributes.name}
-              category={`General Infromation`}
+              category={`Market commentary`}
               header={title}
               subheader={description}
-              time={`5 min`}
+              time={readtime}
               categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
             />
           ))}

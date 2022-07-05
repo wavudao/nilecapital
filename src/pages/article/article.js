@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import qs from "qs";
-import axios from "axios";
 import Container from "../../components/Container";
 import useBodyClass from "../../hooks/useBodyClass";
 import Icon from "../../components/Icon";
 import articleImg from "../../assets/img/article.jpg";
 import Subscribe from "../../components/Subscribe";
-import { generalInfoData } from "../../components/GeneralContent/GeneralData";
 import Category from "../../components/Category";
+import ReactMarkDown from 'react-markdown'
 import { useSelector } from "react-redux";
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
-const endpoint = `https://strapi.nilecapital.cc/api/articles`;
+
+
+
 const baseEndpoint = `https://strapi.nilecapital.cc`
 
 
@@ -25,38 +27,16 @@ const Article = () => {
    const articles = useSelector(state=>state.articles)
    const art = useSelector(state=>state.articles.find(article=>article.id ===articleId))
   art && console.log(art.attributes.content)
-  // const [article, setArticle] = useState({});
-  // const [randomArticles, setRandomArticles] = useState([]);
 
   const getRandomArticles = (articles,num) => {
     const shuffled = [...articles].sort(()=> 0.5 - Math.random())
     return shuffled.slice(0, num)
   }
 
-  // useEffect(() => {
-  //   const fetchArticle = async () => {
-  //     const query = qs.stringify(
-  //       { populate: "*" },
-  //       { encodedValuesOnly: true }
-  //     );
-  //     const response = await axios.get(`${endpoint}?${query}`, {
-  //       headers: {
-  //         Accept: "application/json",
-  //       },
-  //     });
-
-  //     const data = response.data.data;
-  //     const article = [...data].filter((article) => article.id === articleId);
-  //     setArticle(...article)
-  //     const shuffledArticles = getRandomArticles(data, 3)
-  //     setRandomArticles(shuffledArticles)
-  //   };
-  //   fetchArticle();
-  // }, [articleId]);
 
   return (
     <>
-      {Object.keys(art).length === 0 ? (
+      {Object.keys(art)?.length === 0 ? (
         <div className="p-article-loading">
           <Icon name="loadmore" />
           Loading...
@@ -75,7 +55,7 @@ const Article = () => {
 
               <span className="el-title--h7 date">
                 {new Date(art?.attributes.publishedAt).toLocaleDateString()}
-                <span className="time">2 min read</span>
+                <span className="time">{art?.attributes.readtime}</span>
               </span>
             </div>
           </div>
@@ -89,8 +69,8 @@ const Article = () => {
           </div>
 
           <Container article >
-            <p>{art?.attributes.content}</p>
-
+            <ReactMarkDown children={art?.attributes.content}  rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}/>
+            
             <div className="p-article-author">
               <div className="p-article-author--img">
                 <img src={articleImg} alt="" />
@@ -103,13 +83,13 @@ const Article = () => {
 
                 <ul className="custom">
                   <li>
-                    <a target={"_blank"} href="/">
+                    <a target={"_blank"} rel={"noreferrer"} href={`https://linkedin.com/${art?.attributes.author.data.attributes.linkedIn}`}>
                       <Icon name="linkedin" />
                     </a>
                   </li>
 
                   <li>
-                    <a target={"_blank"} href="/">
+                    <a target={"_blank"} rel={"noreferrer"} href={`https://twitter.com/${art?.attributes.author.data.attributes.linkedIn}`}>
                       <Icon name="twitter" />
                     </a>
                   </li>
@@ -121,7 +101,7 @@ const Article = () => {
               <div className="p-article-mark-like">
                 Like the article?
                 <span className="like">
-                  👍 <span className="like-count">12</span>
+                  👍 <span className="like-count">1</span>
                 </span>
                 <span className="like">
                   👎 <span className="like-count">0</span>
@@ -160,13 +140,13 @@ const Article = () => {
           <h2>You might also like</h2>
 
           <ul className="custom c-category">
-            {getRandomArticles(articles,3)?.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+            {getRandomArticles(articles,3)?.map(({id, attributes: {title, description, publishedAt, image, author,category}}) => (
               <Category
               key={id}
               id={id}
               date={new Date(publishedAt).toLocaleDateString()}
               author={author.data.attributes.name}
-              category={`General Infromation`}
+              category={category.data.attributes.name}
               header={title}
               subheader={description}
               time={`5 min`}

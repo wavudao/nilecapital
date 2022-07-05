@@ -18,9 +18,12 @@ const baseEndpoint = `https://strapi.nilecapital.cc`
 
 
 const HomeContent = () => {
-  const articles = useSelector(state=>state.articles);
-  console.log("aricles home", articles)
   useBodyClass("p-home");
+
+  const genArticles = useSelector(state=>state.articles.filter(article=>article.attributes.category.data.attributes.name === `general information`));
+  const market_Articles = useSelector(state=>state.articles.filter(article=>article.attributes.category.data.attributes.name === `market commentary`));
+  console.log("aricles home", genArticles)
+
 
   const images = setPictures(require.context("../../assets/img/p-home/", false, /\.(png|jpe?g|svg|webp)$/));
   // const { date, author, category, header, subheader, time } = generalInfoData;
@@ -28,49 +31,11 @@ const HomeContent = () => {
   const chartSvg = useRef(null);
   const trustInfo = useRef(null);
 
-  const [randomArticles, setRandomArticles] = useState([])
 
   const getRandomArticles = (articles, num) => {
     const shuffled = [...articles].sort(()=> 0.5 - Math.random())
     return shuffled.slice(0, num) 
    }
-
-  useEffect(() => {
-    const fetchArticle = async () => {
-      const query = qs.stringify(
-        { populate: "*" },
-        { encodedValuesOnly: true }
-      );
-      const response = await axios.get(`${endpoint}?${query}`, {
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      
-      const data = response.data.data;
-      // console.log(data[0].attributes.category.data.attributes.name)
-
-      const shuffledArticles = getRandomArticles(data, 3)
-      // let at =[]
-      
-      // for (let i = 0; i < shuffledArticles.length; i++) {
-      //   const lands = {
-      //     date:data[i].attributes.createdAt,  
-      //     author:data[i].attributes.author.data.attributes.name ,
-      //     category:data[i].attributes.category.data.attributes.name ,
-      //     header:data[i].attributes.title,
-      //     subheader:data[i].attributes.description ,
-      //     time:data[i].attributes.createdAt 
-      //   }
-      //   at.push(lands)
-
-      // }
-      setRandomArticles(shuffledArticles)
-      // console.log(at)
-    }
-
-    fetchArticle();
-  },[])
 
   useHomeAnims(chartTable, chartSvg, trustInfo);
 
@@ -102,7 +67,7 @@ const HomeContent = () => {
 
               <h5> Build a portfolio of high performing digital assets by investing with us.</h5>
 
-              <a className="el-button outline" href= "https://app.solrise.finance/funds/CXwv4U7Y7TozUWGEo4jrx8ogddQCyvbywQeUctL1eSBV">
+              <a className="el-button outline" rel="noreferrer" target={"_blank"} href= "https://app.solrise.finance/funds/CXwv4U7Y7TozUWGEo4jrx8ogddQCyvbywQeUctL1eSBV">
                 Invest with us
               </a>
             </div>
@@ -355,16 +320,16 @@ const HomeContent = () => {
               <h2>General Information</h2>
 
               <ul className="custom c-category">
-              {getRandomArticles(articles, 3)?.map(({id, attributes: {title, description, publishedAt, image, author,category}}) => (
+              {getRandomArticles(genArticles, 3)?.map(({id, attributes: {title, readtime ,description, publishedAt, image, author,category}}) => (
                 <Category
                 key={id}
                 id={id}
                 date={new Date(publishedAt).toLocaleDateString()}
                 author={author.data.attributes.name}
-                category={category.data.attributes.name}
+                category={`general information`}
                 header={title}
                 subheader={description}
-                time={`5 min`}
+                time={readtime}
                 categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
              
               />
@@ -397,16 +362,16 @@ const HomeContent = () => {
               <h2>Market Commentary</h2>
 
               <ul className="custom c-category">
-              {getRandomArticles(articles, 3)?.map(({id, attributes: {title, description, publishedAt, image, author}}) => (
+              {getRandomArticles(market_Articles, 3)?.map(({id, attributes: {title,readtime, description, publishedAt, image, author}}) => (
                 <Category
                 key={id}
                 id={id}
                 date={new Date(publishedAt).toLocaleDateString()}
                 author={author.data.attributes.name}
-                category={`General Infromation`}
+                category={`market commentary`}
                 header={title}
                 subheader={description}
-                time={`5 min`}
+                time={readtime}
                 categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
               />
             ))}

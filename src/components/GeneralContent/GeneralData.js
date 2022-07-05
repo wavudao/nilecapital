@@ -4,7 +4,7 @@ import category3 from "../../assets/img/p-category/category3.jpg";
 
 export const generalInfoData = {
   pageTitle: "Our knowledge base",
-  pageSubTitle: "Read through our minds ",
+  pageSubTitle: "Read Our current and prior updates.",
 
   categories: [
     {

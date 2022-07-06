@@ -19,7 +19,8 @@ import {
 import { clusterApiUrl } from '@solana/web3.js';
 import { fetch } from "./redux/actions";
 import { useDispatch } from "react-redux";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const AuthContext = createContext()
@@ -80,6 +81,15 @@ function App() {
           <Header />
 
           <SmoothScroll>
+          <ToastContainer position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover />
             {routing}
             <Footer />
           </SmoothScroll>

@@ -2,15 +2,36 @@ import React, {useContext, useState} from "react";
 import Input from "../Input";
 import setPictures from "../setPictures";
 import { AuthContext } from "../../App";
+import {  toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 const Subscribe = () => {
   const images = setPictures(require.context("../../assets/img/c-subscribe/", false, /\.(png|jpe?g|svg|webp)$/));
   const authContext = useContext(AuthContext)
   const[confirm, setConfirm] = useState(false)
+  const [success, setresponse] =  useState()
 
   const email = authContext.userData.userEmail
 
-  console.log("confirm", confirm)
+  // console.log("confirm", confirm)
+  const subscribeUser = async (event) => {
+     event.preventDefault();
+    // console.log(authContext.userData)
+    toast('hurray')
+    try {
+  
+      let gg = await axios.post('https://auth.nilecapital.cc/api/subscribe', {
+        email: email,
+      })
+      setresponse("Thank you! we've sent you an email")
+      console.log(gg)
+    } catch (error) {
+      console.log(error)
+      setresponse("an error occurred , kindly retry")
+    }
+
+  }
 
 
   return (
@@ -45,9 +66,10 @@ const Subscribe = () => {
               </label>
             </div>
 
-            <button disabled={!confirm} style={{cursor:`${confirm && "not-allowed"} `}} className="el-button outline" type="submit">
+            <button disabled={!confirm}  className="el-button outline" onClick={subscribeUser}>
               Subscribe 
             </button>
+            <p>{success}</p>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ const MarketContent = () => {
 
       <Container>
       <ul className="custom c-category">
-          {market_Articles.map(({id, attributes: {title, readtime,  description, publishedAt, image, author}}) => (
+          {market_Articles.map(({id, attributes: {title, description, publishedAt, image, author, readtime }}) => (
             <Category
               key={id}
               id={id}

@@ -15,10 +15,6 @@ const Auth = () => {
 
   const email = authContext.userData.userEmail
 
-  // const [email, setEmail] = React.useState(
-  //   window.localStorage.getItem("emailForSignIn") || ""
-  // );
-
   const [errorResponse, setErrorResponse] = React.useState("");
 
   React.useEffect(() => {

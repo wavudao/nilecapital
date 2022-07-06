@@ -3,8 +3,8 @@ import faith from "../../assets/img/p-team/faith.jpg";
 import roz from "../../assets/img/p-team/roz.jpg";
 
 export const teamData = {
-  pageTitle: "Our Greatest Minds",
-  pageSubTitle: "We are learning in Public, expect doozies and the dreaded Lollapalooza effect",
+  pageTitle: "Our Team",
+  pageSubTitle: "Here are a few of our team members",
   members: [
     {
       photo: majok,

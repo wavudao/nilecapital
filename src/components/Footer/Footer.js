@@ -81,7 +81,7 @@ const Footer = () => {
             </li> */}
 
             <li>
-              <a  rel="noreferrer" target='_blank'  href="https://t.me/+g7reiUuu6b0xZmVl">
+              <a  rel="noreferrer" target='_blank'  href="https://t.me/wavudao">
                 <Icon name="telegram" />
               </a>
             </li>

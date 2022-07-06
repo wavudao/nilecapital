@@ -3,8 +3,8 @@ import faith from "../../assets/img/p-team/faith.jpg";
 import roz from "../../assets/img/p-team/roz.jpg";
 
 export const teamData = {
-  pageTitle: "Our Team",
-  pageSubTitle: "Here are a few of our team members",
+  pageTitle: "Our Team.",
+  pageSubTitle: "Here are a few of our team members building Nile Capital.",
   members: [
     {
       photo: majok,

@@ -26,13 +26,15 @@ export const teamData = {
     {
       photo: faith,
       name: "Faith Mauta",
-      position: "Chief operating officer",
+      position: "Chief Operating Officer",
       descriptionTitle: "Chief Operating Officer ",
-      description: `Faith Mauta is responsible for overseeing the overall business operations strategy which is crucial for our growth and success. A change agent empowering purpose-driven organizations bring big ideas to life. Her accomplishment is demonstrated by her tenure as the Partnerships Director at Pesabase, a premier payments and remittance solutions provider in Africa, overseeing the growth of the lending platform by closing key partnerships with the leading telcos; Safaricom, MTN and Banks in the region.
-      Previously she served as the Head of Communications with the top leasing firms in Africa Vaell Leasing, RentCo Africa where she developed and implanted company communication plans, business strategies resulting to clear company structures and flow of work steering both companies to great brand heights and growth in both government and corporate clientele portfolio.
-      Faith has over 15 years of work experience directing business strategies. She is a hands-on team leader in the management and expansion of key partnership and stake holder relationships. Faith is a robust communicator with outstanding negotiating skills, unwavering focus on collaborating with teams both internal and external, B2B & B2C clients to anticipate requirements and maximize business opportunities who worked.
-      She worked as the senior projects lead and consultant for Agenda PR, a communications bureau with its main office in Tallinn providing comprehensive public relations and communication management solutions from strategic planning to implementation and analysis to clients in different sectors.
-      The Communications graduate of Daystar University is an inspiring leader with great people skills and passionate about innovation and growth. She is a proactive manager with excellent business acumen in charge of the diverse business operations and function of the organization with an outstanding work ethics.`,
+      description: `Faith Mauta is an inspiring leader passionate about innovation and growth. She serves in the executive overseeing the diverse business functions of the organization.
+      Faith is a seasoned professional with over 15 years’ work experience both in Fintech and Communications & PR. She is a hands-on team leader in the management and expansion of key partnership and stakeholder relations. Faith is a robust communicator with outstanding negotiating skills, unwavering focus on collaborating with teams both internal and external, B2B & B2C clients to anticipate requirements and maximize business opportunities. 
+      She is a change agent empowering purpose-driven organizations bring big ideas to life. 
+      As the Partnerships Director at Pesabase, a premier payments and remittance solutions provider in Africa, she steered the organization on a growth trajectory by closing key partnerships with the leading telcos; Safaricom, MTN and Banks in the region.  
+      Previously she served as the Head of Communications with the top asset leasing firms in East Africa; Vaell LTD & RentCo Africa.  She developed and implemented successful business strategies, and media campaigns triggering brand recognition for both companies. As a result, the firm’s registered solid stakeholder and market growth with a diverse government and corporate clientele portfolio. 
+      Faith was the Senior Projects Lead & Consultant for Agenda PR, a communications bureau based in Europe providing comprehensive public relations and communication management solutions from strategic planning to implementation and analysis to clients in different sectors. 
+      Faith holds a Bachelor’s Degree from Daystar University, Diploma in Communications from KIMC, Certified AML and Compliance and several other professional certifications.`,
       socials: [
         {
           icon: "linkedin",

@@ -4,8 +4,8 @@ import useBodyClass from "../../hooks/useBodyClass";
 // import axios from "axios";
 // import {auth} from "../../firebase"
 
-// import { useConnection, useWallet } from '@solana/wallet-adapter-react';
-// import { Keypair, SystemProgram, Transaction } from '@solana/web3.js';
+import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import { Keypair, SystemProgram, Transaction } from '@solana/web3.js';
 import Container from "../../components/Container";
 // import { sign } from 'tweetnacl';
 // import bs58 from 'bs58';

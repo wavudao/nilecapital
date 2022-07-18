@@ -2,8 +2,8 @@ import React, {useContext, useState} from "react";
 import Input from "../Input";
 import setPictures from "../setPictures";
 import { AuthContext } from "../../App";
-import {  toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import {  toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 const Subscribe = () => {
@@ -24,6 +24,7 @@ const Subscribe = () => {
       let gg = await axios.post('https://auth.nilecapital.cc/api/subscribe', {
         email: email,
       })
+      toast("Wow so easy!");
       setresponse("Thank you! we've sent you an email")
       console.log(gg)
     } catch (error) {
@@ -33,7 +34,15 @@ const Subscribe = () => {
 
   }
 
-
+  const notify = () => toast.success("Wow so easy!",{
+    position: "bottom-center",
+    autoClose: 10000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
   return (
     <>
       <div className="c-subscribe">
@@ -66,9 +75,18 @@ const Subscribe = () => {
               </label>
             </div>
 
-            <button disabled={!confirm}  className="el-button outline" onClick={subscribeUser}>
+            <button disabled={!confirm}  className="el-button outline" onClick={notify}>
               Subscribe 
             </button>
+            <ToastContainer position="bottom-center"
+              autoClose={10000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover/>
             <p>{success}</p>
           </div>
         </div>

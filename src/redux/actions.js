@@ -25,7 +25,7 @@ export const fetch = () => async (dispatch) => {
         });
         
         const data = response.data.data;  
-        console.log(data)
+        // console.log(data)
          dispatch(articleAction(data))
     } catch (error) {
         console.log(error)

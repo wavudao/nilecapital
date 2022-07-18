@@ -28,7 +28,7 @@ pipeline {
         stage('push to Docker') {
             steps {
                 script{
-                        docker.withRegistry('https://917318273830.dkr.ecr.us-east-1.amazonaws.com/', 'ecr:us-east-1:aws-credetilas') {
+                        docker.withRegistry('https://917318273830.dkr.ecr.us-east-1.amazonaws.com/', 'ecr:us-east-1:my.aws.credentials') {
                     
                     app.push("Meta")
                     }

@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from "react";
-import axios from 'axios';
-import qs from 'qs';
-import { marketInfoData } from "./MarketData";
+import React  from "react";
+
 import Subscribe from "../Subscribe";
 import Category from "../Category";
 import Icon from "../Icon";
@@ -9,8 +7,8 @@ import Container from "../Container";
 import setPictures from "../setPictures";
 import { useSelector } from "react-redux";
 
-const endpoint = `http://3.132.252.69:1337/api/articles`;
-const baseEndpoint = `http://3.132.252.69:1337`;
+
+const baseEndpoint = `https://strapi.nilecapital.cc`;
 
 const MarketContent = () => {
   const images = setPictures(require.context("../../assets/img/p-category/figureMarket", false, /\.(png|jpe?g|svg|webp)$/));

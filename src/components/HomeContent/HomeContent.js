@@ -295,6 +295,47 @@ const HomeContent = () => {
         </section>
 
         <section className="section-general">
+        <div className="section-general-category tech">
+            <span className="section-general-category--bg">
+              <span className="section-general-figure figure-5" data-speed="1.2">
+                <img src={images["general-figure-5.png"]} alt="" />
+              </span>
+
+              <span className="section-general-figure figure-6" data-lag="0.5">
+                <img src={images["general-figure-6.png"]} alt="" />
+              </span>
+
+              <span className="section-general-figure figure-7" data-speed="1.3">
+                <img src={images["general-figure-7.png"]} alt="" />
+              </span>
+            </span>
+
+            <Container>
+              <h2>Market Commentary</h2>
+
+              <ul className="custom c-category">
+              {getRandomArticles(market_Articles, 3)?.map(({id, attributes: {title,readtime, description, publishedAt, image, author}}) => (
+                <Category
+                key={id}
+                id={id}
+                date={new Date(publishedAt).toLocaleDateString()}
+                author={author.data.attributes.name}
+                category={`market commentary`}
+                header={title}
+                subheader={description}
+                time={readtime}
+                categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
+              />
+            ))}
+              </ul>
+
+              <Link className="section-general-link" to="/market">
+                view all articles in Market Commentary
+                <Icon name="arrow" />
+              </Link>
+            </Container>
+          </div>
+          
           <div className="section-general-category">
             <span className="section-general-category--bg"></span>
 
@@ -343,46 +384,7 @@ const HomeContent = () => {
             </Container>
           </div>
 
-          <div className="section-general-category tech">
-            <span className="section-general-category--bg">
-              <span className="section-general-figure figure-5" data-speed="1.2">
-                <img src={images["general-figure-5.png"]} alt="" />
-              </span>
 
-              <span className="section-general-figure figure-6" data-lag="0.5">
-                <img src={images["general-figure-6.png"]} alt="" />
-              </span>
-
-              <span className="section-general-figure figure-7" data-speed="1.3">
-                <img src={images["general-figure-7.png"]} alt="" />
-              </span>
-            </span>
-
-            <Container>
-              <h2>Market Commentary</h2>
-
-              <ul className="custom c-category">
-              {getRandomArticles(market_Articles, 3)?.map(({id, attributes: {title,readtime, description, publishedAt, image, author}}) => (
-                <Category
-                key={id}
-                id={id}
-                date={new Date(publishedAt).toLocaleDateString()}
-                author={author.data.attributes.name}
-                category={`market commentary`}
-                header={title}
-                subheader={description}
-                time={readtime}
-                categoryImg={`${baseEndpoint}${image.data.attributes.url}`}
-              />
-            ))}
-              </ul>
-
-              <Link className="section-general-link" to="/market">
-                view all articles in Market Commentary
-                <Icon name="arrow" />
-              </Link>
-            </Container>
-          </div>
         </section>
 
         <section className="section-subscribe">

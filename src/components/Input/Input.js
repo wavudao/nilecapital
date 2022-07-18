@@ -27,7 +27,7 @@ const Input = ({ name, type, placeholder }) => {
       setActive(true);
       setFocusOut(true);
     }
-  }, []);
+  }, [state]);
 
   return (
     <div className={`el-input ${isActive ? "active" : ""} ${isFocusOut && state !== "" ? "filled" : ""}`}>

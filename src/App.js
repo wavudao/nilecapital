@@ -19,7 +19,6 @@ import {
 import { clusterApiUrl } from '@solana/web3.js';
 import { fetch } from "./redux/actions";
 import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -36,8 +35,21 @@ const initialData = {
 require('@solana/wallet-adapter-react-ui/styles.css');
 function App() {
   const routing = useRoutes(routes);
+  const dispatch = useDispatch();
 
   const [userData, setUserData] = useState(initialData) 
+
+
+  useEffect(()=>{
+    const getArticles = ()=>{
+      dispatch(fetch());
+    }
+    getArticles()
+    // const interval=setInterval(()=>{
+    //   getArticles()
+    //  },7000)
+    //  return()=>clearInterval(interval)
+  },[])
 
   const addUserData = (name, data) => {
     setUserData(userData => ({
@@ -45,14 +57,6 @@ function App() {
       [name]: data
     }))
   }
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-    const getArticles = ()=>{
-      dispatch(fetch());
-    }
-    getArticles()
-  },[])
 
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Mainnet
@@ -81,15 +85,6 @@ function App() {
           <Header />
 
           <SmoothScroll>
-          <ToastContainer position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover />
             {routing}
             <Footer />
           </SmoothScroll>

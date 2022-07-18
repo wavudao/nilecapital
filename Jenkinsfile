@@ -35,16 +35,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                script {
-                    sshagent(credentials : ['3.15.86.223']){
+        // stage('Deploy') {
+        //     steps {
+        //         script {
+        //             sshagent(credentials : ['3.15.86.223']){
 
-                    sh "pwd"
+        //             sh "pwd"
 
-                    }
-                }
-            }
-        }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

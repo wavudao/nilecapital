@@ -8,6 +8,7 @@ COPY gsap-bonus.tgz ./
 
 
 RUN yarn 
+RUN yarn add crypto-browserify
 
 
 COPY / ./

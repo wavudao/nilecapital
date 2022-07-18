@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json ./
 COPY gsap-bonus.tgz ./
 
-RUN apk add g++ gcc make  python2
+
 
 RUN yarn 
 

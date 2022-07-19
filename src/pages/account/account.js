@@ -48,7 +48,7 @@ export const Account = () => {
 }
  
  useEffect(() => {
-  if(!user) toast("Wow so easy!");navigate('/login')
+  //if(!user) toast("Wow so easy!");navigate('/login')
     fetch()
     const interval=setInterval(()=>{
       fetch()

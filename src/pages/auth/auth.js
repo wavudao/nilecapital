@@ -28,6 +28,8 @@ const Auth = () => {
       .then((res) => {
         console.log(res.user)
         navigate('/account')
+      }).catch((error) => {
+        console.log(error)
       })
     
     }
@@ -38,7 +40,7 @@ const Auth = () => {
 
   const trySignIn = async (event) => {
     event.preventDefault();
-    console.log(authContext.userData)
+    // console.log(authContext.userData)
 
     // If the user is re-entering their email address but already has a code
     if (isSignInWithEmailLink(auth, window.location.href) && !!email) {

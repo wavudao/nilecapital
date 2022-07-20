@@ -9,19 +9,8 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import { useNavigate } from "react-router-dom";
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-// const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
 
     const user = auth.currentUser;
-
-//  const fetchInfo = async () => {
-  
-//    let Investment = await axios.get('https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/DaMeLur5PYcLHfGMTexLowVuP91mKmvhGLbeEV2wKzDr/investments')
-//   //  console.log(Investment)
-//    return Investment.data.data[0]
-//  }
-
-//https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/DaMeLur5PYcLHfGMTexLowVuP91mKmvhGLbeEV2wKzDr/investments
-// https://api-dawn-2-phase-2.solrise.finance/api/v3/funds?page=0&pageSize=1000&owner=Db9EN9KHvQ8ePitn4LKzCUrUcBDVGa4Q86Hj64rstQ1p&sortField=lastActivityTimestamp&sortDirection=DESC
 
 export const Account = () => {
   useBodyClass("p-auth");
@@ -31,15 +20,16 @@ export const Account = () => {
   const [Investment,setInvestment] = useState()
   const [perform, setPerformance] = useState()
   const [pastInvestment,setPastInvestment] = useState()
+  const [address, setAddress] = useState()
 
   async function fetch () {
 
-  let response = await axios.get('https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/DaMeLur5PYcLHfGMTexLowVuP91mKmvhGLbeEV2wKzDr')
- let invest = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/3ZNieBYqjdh9rGR2WGzE31oe2sDjcNjijzmQ2uTgCryc/investment-history?page=0&pageSize=10&sortField=lastActivityTimestamp&sortDirection=DESC`)
- const performance = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/3ZNieBYqjdh9rGR2WGzE31oe2sDjcNjijzmQ2uTgCryc/performance?performancePeriod=all`)
- console.log(invest.data.data)
- setPastInvestment(invest.data.data)
- setPerformance(performance.data.data)
+  let response = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}`)
+  let invest = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}/investment-history?page=0&pageSize=10&sortField=lastActivityTimestamp&sortDirection=DESC`)
+  const performance = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}/performance?performancePeriod=all`)
+  console.log(invest.data.data)
+  setPastInvestment(invest.data.data)
+  setPerformance(performance.data.data)
   let data  = await response.data.data
 
   setInvestment(data)
@@ -48,7 +38,9 @@ export const Account = () => {
 }
  
  useEffect(() => {
-  //if(!user) toast("Wow so easy!");navigate('/login')
+  if(!user)navigate('/login')
+  let  pubKey = user.uid
+  setAddress(pubKey)
     fetch()
     const interval=setInterval(()=>{
       fetch()
@@ -62,6 +54,7 @@ export const Account = () => {
     <main  className="p-article-box">
     <Container>
     <ToastContainer />
+    <p>{address}</p>
     <table>
       <thead>
         <td>{`current Investment \n \n `}</td>
@@ -79,10 +72,10 @@ export const Account = () => {
 
     </table>
     <LineChart width={1000} height={500} data={perform} >
-    <Line type="monotone" dataKey="initialInvestment" stroke="#8884d8" />
+   
     <Line type="monotone" dataKey="value" stroke="#8884d8" />
     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-    <XAxis dataKey="time" />
+    <XAxis dataKey="time"  />
     <YAxis  />
     <Tooltip />
     </LineChart>
@@ -122,9 +115,27 @@ export const Account = () => {
 // export default Signup
 
 
-// this code has been written by a novice frontend dev ,   kindly adjust where needed considering performance 
+// this code has been written by a novice frontend dev ,   kindly adjust where needed considering performance   you can replace address for testing 
     // const user = auth.currentUser;
     
+
+
+
+
+
+
+
+
    // https://api-dawn-2-phase-2.solrise.finance/api/v3/funds/9zART5211mn51x9raDojtHcmfEU6SQ58xMCFDe5479VQ/aum?performancePeriod=all
    //https://api-dawn-2-phase-2.solrise.finance/api/v3/funds/9zART5211mn51x9raDojtHcmfEU6SQ58xMCFDe5479VQ/performance?performancePeriod=all
    //https://api-dawn-2-phase-2.solrise.finance/api/v3/funds/9zART5211mn51x9raDojtHcmfEU6SQ58xMCFDe5479VQ/performance?performancePeriod=1d
+
+//  const fetchInfo = async () => {
+  
+//    let Investment = await axios.get('https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/DaMeLur5PYcLHfGMTexLowVuP91mKmvhGLbeEV2wKzDr/investments')
+//   //  console.log(Investment)
+//    return Investment.data.data[0]
+//  }
+
+//https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/DaMeLur5PYcLHfGMTexLowVuP91mKmvhGLbeEV2wKzDr/investments
+// https://api-dawn-2-phase-2.solrise.finance/api/v3/funds?page=0&pageSize=1000&owner=Db9EN9KHvQ8ePitn4LKzCUrUcBDVGa4Q86Hj64rstQ1p&sortField=lastActivityTimestamp&sortDirection=DESC

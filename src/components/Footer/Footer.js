@@ -90,7 +90,7 @@ const Footer = () => {
           <span className="publish">{`© ${new Date().getFullYear()} WavuDao`}</span>
 
           <span className="development">
-            <span className="development--text">Design & Development:</span>
+            <span className="development--text">Design & Dev:</span>
             
             <a target={"_blank"} rel="noopener noreferrer" href="https://litnevski.studio/">
               <img src={eyeLogo} alt="site logo" />

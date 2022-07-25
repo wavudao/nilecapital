@@ -22,25 +22,26 @@ export const Account = () => {
   const [pastInvestment,setPastInvestment] = useState()
   const [address, setAddress] = useState()
 
-  async function fetch () {
 
-  let response = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}`)
-  let invest = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}/investment-history?page=0&pageSize=10&sortField=lastActivityTimestamp&sortDirection=DESC`)
-  const performance = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}/performance?performancePeriod=all`)
-  console.log(invest.data.data)
-  setPastInvestment(invest.data.data)
-  setPerformance(performance.data.data)
-  let data  = await response.data.data
-
-  setInvestment(data)
-
-  
-}
  
  useEffect(() => {
   if(!user)navigate('/login')
   let  pubKey = user.uid
   setAddress(pubKey)
+  async function fetch () {
+     
+    let response = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${pubKey}`)
+    let invest = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${pubKey}/investment-history?page=0&pageSize=10&sortField=lastActivityTimestamp&sortDirection=DESC`)
+    const performance = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${pubKey}/performance?performancePeriod=all`)
+    console.log(invest.data.data)
+    setPastInvestment(invest.data.data)
+    setPerformance(performance.data.data)
+    let data  = await response.data.data
+  
+    setInvestment(data)
+  
+    
+  }
     fetch()
     const interval=setInterval(()=>{
       fetch()

@@ -30,7 +30,7 @@ const Footer = () => {
 
             <ul className="custom menu-list">
               <li className="menu-list-item">
-                <Link to="/">Account</Link>
+                <Link to="/account">Account</Link>
               </li>
 
               <li className="menu-list-item">

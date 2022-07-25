@@ -25,7 +25,8 @@ export const Account = () => {
 
  
  useEffect(() => {
-  if(!user)navigate('/login')
+  if(user == null)navigate('/login')
+  console.log(user)
   let  pubKey =  user && user.uid
   setAddress(pubKey)
   async function fetch () {

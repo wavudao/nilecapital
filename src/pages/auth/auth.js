@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import useBodyClass from "../../hooks/useBodyClass";
 import { auth ,signInWithEmailLink,isSignInWithEmailLink } from "../../firebase";
 import axios from "axios";
+import {  toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../App";
 
 const Auth = () => {
@@ -26,6 +28,7 @@ const Auth = () => {
       // Sign the user in
       signInWithEmailLink(auth, saved_email, window.location.href)
       .then((res) => {
+        window.localStorage.removeItem('emailForSignIn'); 
         console.log(res.user)
         navigate('/account')
       }).catch((error) => {
@@ -47,7 +50,8 @@ const Auth = () => {
     //   // Sign the user in
       signInWithEmailLink(email, window.location.href)
       .then( (res) => {
-
+       console.log ( res.user)
+        window.localStorage.removeItem('emailForSignIn');
         navigate('/account')
       })
       .catch((err) => {

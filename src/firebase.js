@@ -2,7 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 
-import { getAuth, signInWithEmailLink, isSignInWithEmailLink} from "firebase/auth";
+import { getAuth, signInWithEmailLink, isSignInWithEmailLink,onAuthStateChanged} from "firebase/auth";
 
 var firebaseConfig = {
   apiKey: "AIzaSyA_lxSy30dT4oQV1_B2GekBHnegVOmeb5c",
@@ -18,4 +18,4 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app)
 
-export { auth,signInWithEmailLink,isSignInWithEmailLink };
+export { auth,signInWithEmailLink,isSignInWithEmailLink,onAuthStateChanged };

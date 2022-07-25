@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import Input from "../../components/Input";
 import { useNavigate } from "react-router-dom";
 import useBodyClass from "../../hooks/useBodyClass";
-import { auth ,signInWithEmailLink,isSignInWithEmailLink } from "../../firebase";
+import { auth ,signInWithEmailLink,isSignInWithEmailLink,onAuthStateChanged } from "../../firebase";
 import axios from "axios";
 import {  toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,11 +26,17 @@ const Auth = () => {
     // Verify the user went through an email link and the saved email is not null
     if (isSignInWithEmailLink(auth, window.location.href) && !!saved_email) {
       // Sign the user in
+      
       signInWithEmailLink(auth, saved_email, window.location.href)
       .then((res) => {
-        window.localStorage.removeItem('emailForSignIn'); 
-        console.log(res.user)
-        navigate('/account')
+        onAuthStateChanged(function(user) {
+          if (user) {
+           window.location = '/account';
+          }
+        })
+        // // window.localStorage.removeItem('emailForSignIn'); 
+        // console.log(res.user)
+        // navigate('/account')
       }).catch((error) => {
         console.log(error)
       })

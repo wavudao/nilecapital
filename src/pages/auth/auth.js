@@ -31,12 +31,14 @@ const Auth = () => {
       .then((res) => {
         onAuthStateChanged(auth, (user) =>{
           if (user) {
+            window.localStorage.removeItem('emailForSignIn'); 
            console.log(user)
+           navigate('/account')
           }
         })
-        // // window.localStorage.removeItem('emailForSignIn'); 
+        // // 
         // console.log(res.user)
-        // navigate('/account')
+        // 
       }).catch((error) => {
         console.log(error)
       })

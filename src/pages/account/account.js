@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
-    const user = auth.currentUser;
+  
 
 export const Account = () => {
   useBodyClass("p-auth");
@@ -27,24 +27,22 @@ export const Account = () => {
  useEffect(() => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
+      setAddress(uid)
+
       // ...
     } else {
       // User is signed out
-
-      console.log('signed out')
+     navigate('/login')
       // ...
     }
   })
-  let  pubKey =  user && user.uid
-  setAddress(pubKey)
+  
   async function fetch () {
      
-    let response = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${pubKey}`)
-    let invest = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${pubKey}/investment-history?page=0&pageSize=10&sortField=lastActivityTimestamp&sortDirection=DESC`)
-    const performance = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${pubKey}/performance?performancePeriod=all`)
+    let response = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}`)
+    let invest = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}/investment-history?page=0&pageSize=10&sortField=lastActivityTimestamp&sortDirection=DESC`)
+    const performance = await axios.get(`https://api-dawn-2-phase-2.solrise.finance/api/v3/wallet/${address}/performance?performancePeriod=all`)
     console.log(invest.data.data)
     setPastInvestment(invest.data.data)
     setPerformance(performance.data.data)
@@ -61,7 +59,7 @@ export const Account = () => {
        
        
      return()=>clearInterval(interval)
- },[navigate])
+ },[address, navigate])
  console.log( Investment && Investment)
   return (
     <main  className="p-article-box">

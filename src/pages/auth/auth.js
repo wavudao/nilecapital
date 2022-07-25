@@ -29,7 +29,7 @@ const Auth = () => {
       
       signInWithEmailLink(auth, saved_email, window.location.href)
       .then((res) => {
-        onAuthStateChanged(function(user) {
+        onAuthStateChanged(auth, (user) =>{
           if (user) {
            console.log(user)
           }

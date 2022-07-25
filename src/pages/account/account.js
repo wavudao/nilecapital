@@ -2,7 +2,7 @@ import React,{useEffect,useState} from "react";
 // import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';import { useNavigate } from "react-router-dom";
 import useBodyClass from "../../hooks/useBodyClass";
 import axios from "axios";
-import {auth} from "../../firebase"
+import {auth,onAuthStateChanged} from "../../firebase"
 
 import Container from "../../components/Container";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
@@ -25,8 +25,19 @@ export const Account = () => {
 
  
  useEffect(() => {
-  if(user == null)navigate('/login')
-  console.log(user)
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+
+      console.log('signed out')
+      // ...
+    }
+  })
   let  pubKey =  user && user.uid
   setAddress(pubKey)
   async function fetch () {

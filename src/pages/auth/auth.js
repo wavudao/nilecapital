@@ -31,7 +31,7 @@ const Auth = () => {
       .then((res) => {
         onAuthStateChanged(function(user) {
           if (user) {
-           window.location = '/account';
+           console.log(user)
           }
         })
         // // window.localStorage.removeItem('emailForSignIn'); 

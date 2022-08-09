@@ -17,8 +17,7 @@ const Subscribe = () => {
   // console.log("confirm", confirm)
   const subscribeUser = async (event) => {
      event.preventDefault();
-    // console.log(authContext.userData)
-    toast('hurray')
+
     try {
   
       let gg = await axios.post('https://auth.nilecapital.cc/api/subscribe', {

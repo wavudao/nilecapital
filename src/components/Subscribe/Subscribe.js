@@ -24,9 +24,9 @@ const Subscribe = () => {
       let gg = await axios.post('https://auth.nilecapital.cc/api/subscribe', {
         email: email,
       })
-      toast("Wow so easy!");
+      notify()
       setresponse("Thank you! we've sent you an email")
-      console.log(gg)
+     
     } catch (error) {
       console.log(error)
       setresponse("an error occurred , kindly retry")
@@ -75,7 +75,7 @@ const Subscribe = () => {
               </label>
             </div>
 
-            <button disabled={!confirm}  className="el-button outline" onClick={notify}>
+            <button disabled={!confirm}  className="el-button outline" onClick={subscribeUser}>
               Subscribe 
             </button>
             <ToastContainer position="bottom-center"
@@ -84,7 +84,7 @@ const Subscribe = () => {
               newestOnTop={false}
               closeOnClick
               rtl={false}
-              pauseOnFocusLoss
+              pauseOnFocusLosis
               draggable
               pauseOnHover/>
             <p>{success}</p>

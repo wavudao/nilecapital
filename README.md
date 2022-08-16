@@ -1,4 +1,4 @@
-# Utafiti website
+# Nile capital website
 
 ## prerequisites
 - node, yarn or npm 

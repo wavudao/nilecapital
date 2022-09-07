@@ -9,81 +9,102 @@ const Terms = () => {
     <article className="p-article-box">
       <Container article>
         <h1>Privacy Policy</h1>
-        <span className="el-h8-medium">This AGREEMENT was last UPDATED on October 30th, 2021</span>
+        <span className="el-h8-medium">This AGREEMENT was last UPDATED on September  7th, 2022</span>
 
         <span className="el-title-h4 semi">
           Please scroll down and read this agreement in its entirety before you use any of our products or services or become a member of
           Nile Capital.
         </span>
         <p>
-          This Terms of Use Agreement (the 'Agreement') and our Privacy Policy, which is hereby incorporated by reference, governs your use
-          of Nile Capital and www.wavudao.com site, products and services ('Nile Capital” or the 'Service'); Nile Capital provides financial
-          infotainment and education from Nile Capital ('we' or 'us'). By accessing or using the products, services, website and software provide
-          d through or in connection with Nile Capital, you signify that you have read, understood, and agree to be bound by this Agreement and
-          our current Privacy Policy, whether or not you are a registered member. If you do not agree to any of these terms or any future
-          Terms of Use, you may not use or access (or continue to access) the Service.
+        At Nile Capital, accessible from <a href="https://nilecapital.cc" > Nile capital </a> one of our main priorities is the privacy of our visitors. 
+        This Privacy Policy document contains types of information that is collected and recorded by Nile Capital and how we use it.
+        If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+        This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Nile Capital. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the Free Privacy Policy Generator.
         </p>
 
-        <h5>1. Changes to the Agreement</h5>
+        <h5>1. Consent</h5>
 
         <p>
-          We may change the terms of this Agreement at any time and without prior notice. If we do this, we will post the changes to this
-          page and indicate at the top of the page the date the Agreement was last revised. You can access this document at any time by
-          selecting the Terms of Use link located at the bottom of every page on the Nile Capital web site. Your use of Nile Capital after changes are
-          made to this Agreement means that you agree to be bound by such changes. As our business changes constantly, this Agreement, our
-          Privacy Policy, and other pertinent company policies may change also. You should check our web site frequently to see recent
-          changes.
+          By using our website, you hereby consent to our Privacy Policy and agree to its terms.
         </p>
 
-        <h5>2. Legal Disclaimer</h5>
+        <h5>2. Information we collect</h5>
 
         <p>
-          Nile Capital is a content provider and publisher and is not a registered broker-dealer or investment advisor. By accessing Nile Capital
-          websites and/or using Nile Capital products and services, including without limitation any and all content available on or through the
-          Service, you understand and agree that the material provided in Nile Capital products and services is for informational and educational
-          purposes only, and that no mention of a particular security in any Nile Capital product or service constitutes a recommendation to buy,
-          sell, or hold that or any other security, or that any particular security, portfolio of securities, transaction or investment
-          strategy is suitable for any specific person. You further understand and agree that none of the information providers or their
-          affiliates will advise you personally concerning the nature, potential, value or suitability of any particular security, portfolio
-          of securities, transaction, investment strategy or other matter. To the extent any of the information contained in any Nile Capital
-          product or service may be deemed to be investment advice, such information is impersonal and not tailored to the investment needs
-          of any specific person.
+        The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
+        If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.
+        When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.
+
         </p>
 
-        <p>
-          You understand and agree that any Nile Capital product or service may contain opinions from time to time with regard to any securities
-          mentioned in other Nile Capital products or services, and that those opinions may be different from those contained in another Nile Capital
-          product or service. You understand and agree that, from time to time, any or all of the information providers or their affiliates
-          may hold positions in securities mentioned and that they may trade for their own account. In cases where the position is held at
-          the time of publication, appropriate disclosure is made as of the time of publication. You understand and agree that performance
-          data is supplied by sources believed to be reliable, that the calculations in any Nile Capital publication or service are made using
-          such data, and that such data is not guaranteed by these sources, the information providers, or any other person or entity, and
-          may not be accurate or complete.
-        </p>
+        <h5>3. How we use your information </h5>
 
         <p>
-          You understand that all Analysts operating on Nile Capital are independent consultants and are not employeed or represent Nile Capital in
-          any manner. All Analysts content on the Nile Capital site is their own work and does not represent the opinion of Nile Capital or any of the
-          other Analysts on the Nile Capital platform.
+          We use the information we collect in various ways, including to:
+          <ul>
+            <li>Provide, operate, and maintain our website.</li>
+            <li>Improve, personalise, and expand our website.</li>
+            <li>Understand and analyse how you use our website.</li>
+            <li>Develop new products, services, features, and functionality</li>
+            <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
+            <li>Send you emails.</li>
+            <li>Find and prevent fraud.</li>
+          </ul>
         </p>
+       <h5>4. Log Files</h5>
         <p>
-          BEFORE SELLING OR BUYING ANY CRYPTOCURRENCY OR OTHER INVESTMENT YOU SHOULD CONSULT WITH A QUALIFIED BROKER OR OTHER FINANCIAL
-          PROFESSIONAL TO VERIFY PRICING INFORMATION AND TO SOLICIT ADVICE AS TO THE APPROPRIATENESS OF A GIVEN TRANSACTION OR INVESTMENT.
+          Nile Capital follows a standard procedure of using log files.
+         These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. 
+         The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. 
+         These are not linked to any information that is personally identifiable. The purpose of the information is for analysing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
         </p>
-        <h5>3. Registration</h5>
-        <p>
-          In order to access certain features of the Service, you will have to become a member of Nile Capital by subscribing and creating a
-          Nile Capital account. When you create your account, you must provide accurate and complete information, and keep that information up to
-          date. You are solely responsible for maintaining the confidentiality of your user name and password and for any and all activities
-          (including purchases) that are conducted through your account. You may never use another user's account without permission.
-        </p>
-        <p>
-          By providing Nile Capital your email address you consent to our using the email address to send you Service-related notices, including
-          any notice required by law, in lieu of written communication by postal mail. You may unsubscribe to certain email communications
-          at any time though the 'Manage Account' link at the top of every Nile Capital page when you are logged in. We may also use your email
-          address to send you other messages, including changes to Nile Capital features and special offers. If you do not want to receive such
-          email messages, you may opt out by sending an email message to team@wavudao.com with the word 'UNSUBSCRIBE' in the subject field.
-        </p>
+
+        <h5>5. Cookies and Web Beacons</h5>
+
+        <p>Like any other website, Nile Capital uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimise the users' experience by customising our web page content based on visitors' browser type and/or other information.</p>
+
+
+
+      <h5>6. Advertising Partners Privacy Policies</h5>
+
+      <p>You may consult this list to find the Privacy Policy for each of the advertising partners of Nile Capital. </p>
+
+      <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Nile Capital, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalise the advertising content that you see on websites that you visit.</p>
+
+      <p>Note that Nile Capital has no access to or control over these cookies that are used by third-party advertisers.</p>
+
+      <h5>7. Third Party Privacy Policies</h5>
+
+      <p>Nile Capital's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+
+      <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+
+      <h5>8. CCPA Privacy Rights (Do Not Sell My Personal Information)</h5>
+
+      <p>Under the CCPA, among other rights, California consumers have the right to:</p>
+      <p>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</p>
+      <p>Request that a business delete any personal data about the consumer that a business has collected.</p>
+      <p>Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</p>
+      <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+      <h5>9. GDPR Data Protection Rights</h5>
+
+      <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
+      <p>The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.</p>
+      <p>The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.</p>
+      <p>The right to erasure – You have the right to request that we erase your personal data, under certain conditions.</p>
+      <p>The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.</p>
+      <p>The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.</p>
+      <p>The right to data portability – You have the right to request that we transfer the data that we have collected to another organisation, or directly to you, under certain conditions.</p>
+      <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+      <h5>10. Children's Information</h5>
+
+      <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+
+      <p>Nile Capital does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+
       </Container>
     </article>
   );

@@ -70,7 +70,7 @@ const Header = () => {
           <nav className={`c-header-menu ${activeMobMenu ? "active" : ""}`}>
             <ul className="custom">
               <li>
-                <NavLink to="/general">General Information</NavLink>
+                <NavLink to="/general">Learn With Us </NavLink>
               </li>
 
               <li>

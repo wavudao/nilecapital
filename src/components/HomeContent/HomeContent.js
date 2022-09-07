@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import useHomeAnims from "../../hooks/useHomeAnims";
 import { useSelector } from "react-redux";
 
-const endpoint = `https://strapi.nilecapital.cc/api/articles`;
 const baseEndpoint = `https://strapi.nilecapital.cc`
 
 
@@ -358,7 +357,7 @@ const HomeContent = () => {
             </span>
 
             <Container>
-              <h2>General Information</h2>
+              <h2>Learn With Us</h2>
 
               <ul className="custom c-category">
               {getRandomArticles(genArticles, 3)?.map(({id, attributes: {title, readtime ,description, publishedAt, image, author,category}}) => (
@@ -378,7 +377,7 @@ const HomeContent = () => {
               </ul>
 
               <Link className="section-general-link" to="/general">
-                view all articles in Market Commentary
+                view all articles in general information
                 <Icon name="arrow" />
               </Link>
             </Container>

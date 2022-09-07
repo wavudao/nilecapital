@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="c-footer-top-menu">
             <ul className="custom menu-list">
               <li className="menu-list-item">
-                <Link to="/general">General Information</Link>
+                <Link to="/general">Learn With Us</Link>
               </li>
 
               <li className="menu-list-item">
@@ -63,7 +63,7 @@ const Footer = () => {
             </li>
 
             <li>
-              <a rel="noreferrer" target='_blank' href="https://twitter.com/Wavu_DAO ">
+              <a rel="noreferrer" target='_blank' href="https://twitter.com/nilecapitalcc">
                 <Icon name="twitter" />
               </a>
             </li>
@@ -81,12 +81,12 @@ const Footer = () => {
             </li> */}
 
             <li>
-              <a  rel="noreferrer" target='_blank'  href="https://t.me/wavudao">
+              <a  rel="noreferrer" target='_blank'  href="https://t.me/NileCapital">
                 <Icon name="telegram" />
               </a>
             </li>
           </ul>
-{/* ©  */}
+          {/* ©  */}
           <span className="publish">{`© ${new Date().getFullYear()} WavuDao`}</span>
 
           <span className="development">
